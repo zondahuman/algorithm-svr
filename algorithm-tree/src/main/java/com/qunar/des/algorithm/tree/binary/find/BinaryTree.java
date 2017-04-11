@@ -1,0 +1,87 @@
+package com.qunar.des.algorithm.tree.binary.find;
+
+import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: abin
+ * Date: 15-4-14 上午1:48
+ */
+public class BinaryTree {
+    private Node root;
+
+    public void addChild(int data) {
+        Node node = new Node(data);
+        if (null == root) {
+            root = new Node(data);
+        } else {
+            Node foucs = root;
+            Node parent = null;
+            while (true) {
+                parent = foucs;
+                if (data < foucs.value) {
+                    foucs = foucs.left;
+                    if (foucs == null) {
+                        parent.left = node;
+                        return;
+                    }
+                } else {
+                    foucs = foucs.right;
+                    if (null == foucs) {
+                        parent.right = node;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    public Node find(int data) {
+        Node current = root;
+        while (data != current.value) {
+            if (data < current.value)
+                current = current.left;
+            else
+                current = current.right;
+            if (null == current)
+                return null;
+        }
+        return current;
+    }
+
+    public void previous(Node tree){
+        if(null != tree){
+            System.out.println(tree.value+"-");
+            previous(tree.left);
+            previous(tree.right);
+        }
+    }
+    public void middle(Node tree){
+        if(null != tree){
+            middle(tree.left);
+            System.out.println(tree.value+"-");
+            middle(tree.right);
+        }
+    }
+    public void post(Node tree){
+        if(null != tree){
+            post(tree.left);
+            post(tree.right);
+            System.out.println(tree.value+"-");
+        }
+    }
+
+
+    public static void main(String[] args) {
+        BinaryTree binaryTree = new BinaryTree();
+        binaryTree.addChild(5);
+        binaryTree.addChild(1);
+        binaryTree.addChild(3);
+        binaryTree.addChild(2);
+        binaryTree.addChild(4);
+        System.out.println("binaryTree=" + JsonUtil.toJson(binaryTree.root));
+        Node findNode = binaryTree.find(3);
+        System.out.println("findNode=" + JsonUtil.toJson(findNode));
+        binaryTree.middle(binaryTree.root);
+    }
+}
