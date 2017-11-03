@@ -509,8 +509,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
@@ -518,18 +518,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.2</version>
-                <!--<executions>-->
-                <!--<execution>-->
-                <!--<id>pre-process-classes</id>-->
-                <!--<phase>compile</phase>-->
-                <!--<goals>-->
-                <!--<goal>jar</goal>-->
-                <!--</goals>-->
-                <!--<configuration>-->
-                <!--<classifier>pre-process</classifier>-->
-                <!--</configuration>-->
-                <!--</execution>-->
-                <!--</executions>-->
+
             </plugin>
             <!-- 打包时不进行junit测试 -->
             <plugin>
@@ -542,16 +531,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <!--<configuration>-->
-                <!--<filesets>-->
-                <!--<fileset>-->
-                <!--<directory>target-other</directory>-->
-                <!--<includes>-->
-                <!--<include>*.class</include>-->
-                <!--</includes>-->
-                <!--</fileset>-->
-                <!--</filesets>-->
-                <!--</configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -562,53 +541,11 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2-beta-2</version>
-                <!--<executions>-->
-                <!--<execution>-->
-                <!--<id>create-executable-jar</id>-->
-                <!--<phase>package</phase>-->
-                <!--<goals>-->
-                <!--<goal>single</goal>-->
-                <!--</goals>-->
-                <!--<configuration>-->
-                <!--<descriptorRefs>-->
-                <!--<descriptorRef>-->
-                <!--jar-with-dependencies-->
-                <!--</descriptorRef>-->
-                <!--</descriptorRefs>-->
-                <!--<archive>-->
-                <!--<manifest>-->
-                <!--<mainClass>org.sonatype.mavenbook.App</mainClass>-->
-                <!--</manifest>-->
-                <!--</archive>-->
-                <!--</configuration>-->
-                <!--</execution>-->
-                <!--</executions>-->
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <!--java doc -->
-                <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <!-- 代码检查 -->
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <!--<configuration>-->
-                <!--<configLocation>config/sun_checks.xml</configLocation>-->
-                <!--</configuration>-->
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <!-- test 结果报表 -->
-                <artifactId>surefire-report-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <!-- 源代码的HTML化 -->
-                <artifactId>jxr-maven-plugin</artifactId>
-            </plugin>
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
