@@ -1,5 +1,10 @@
 package com.qunar.des.algorithm.basic.string.find;
 
+import com.google.common.collect.Lists;
+import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: abin
@@ -7,9 +12,11 @@ package com.qunar.des.algorithm.basic.string.find;
  */
 public class FindSubString {
     public static void main(String[] args) {
-        System.out.println("\nResult = "
-                + findMe(" findMe", "Can you findMe from this String?"));
-        System.out.println("findSub=" + findSub("abcdefghi", "bcde"));
+//        System.out.println("\nResult = "
+//                + findMe(" findMe", "Can you findMe from this String?"));
+//        System.out.println("findSub=" + findSub("abcdefghi", "bcde"));
+        List<String> list = getAllSubStrings("abcd");
+        System.out.println(JsonUtil.toJson(list));
     }
 
     public static boolean findSub(String father, String sub) {
@@ -56,4 +63,29 @@ public class FindSubString {
                         : "\nImplement your own Contains() Method - Result:  Nope - No Match Found..");
         return foundme;
     }
+
+
+    public static List<String> getAllSubStrings(String param){
+        List<String> list = Lists.newArrayList();
+
+        char[] strArray = param.toCharArray();
+        int k = 0;
+        while(true){
+            String temp = "";
+            for (int i = k; i < strArray.length; i++) {
+                char entry = strArray[i];
+                temp = temp + entry;
+                list.add(temp);
+            }
+            k++;
+            if(k>=strArray.length)
+                break;
+        }
+        return list;
+    }
+
+
+
+
+
 }
