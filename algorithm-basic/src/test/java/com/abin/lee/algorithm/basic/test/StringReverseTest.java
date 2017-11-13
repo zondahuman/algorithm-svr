@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.special.recursive;
+package com.abin.lee.algorithm.basic.test;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
@@ -7,7 +7,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
  * User: abin
  * Date: 15-4-23 下午8:11
  */
-public class StringReverse {
+public class StringReverseTest {
     public static void main(String[] args) {
         String init = "abcdef";
         String result = reverse(init);
@@ -44,5 +44,5 @@ public class StringReverse {
     }
 
 
-
+    
 }
