@@ -1,6 +1,7 @@
 package com.abin.lee.algorithm.basic.test;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import org.junit.Test;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,12 +13,31 @@ public class StringReverseTest {
         String init = "abcdef";
         String result = reverse(init);
         System.out.println("result=" + result);
-        char[] array = new char[]{'a', 'b', 'c', 'd', 'e'};
-        char[] resultArray = reverse(array, 0, array.length - 1);
-        System.out.println("resultArray=" + JsonUtil.toJson(resultArray));
-        int[] arrayer = new int[]{1,2,3,4,5};
-        int[] resultArrayer = reverse(arrayer, 0, arrayer.length - 1);
-        System.out.println("resultArrayer=" + JsonUtil.toJson(resultArray));
+//        char[] array = new char[]{'a', 'b', 'c', 'd', 'e'};
+//        char[] resultArray = reverse(array, 0, array.length - 1);
+//        System.out.println("resultArray=" + JsonUtil.toJson(resultArray));
+//        int[] arrayer = new int[]{1,2,3,4,5};
+//        int[] resultArrayer = reverse(arrayer, 0, arrayer.length - 1);
+//        System.out.println("resultArrayer=" + JsonUtil.toJson(resultArray));
+    }
+
+    @Test
+    public void test1(){
+        String str = "abcdef";
+        String result = str.substring(1);
+        System.out.println("result=" + result);
+        char result1 = str.charAt(0);
+        System.out.println("result1=" + result1);
+        String result2 = str.substring(1) + str.charAt(0);
+        System.out.println("result2=" + result2);
+    }
+
+    @Test
+    public void test2() {
+        String str = "abcdef";
+        String result = reverse(str);
+        System.out.println("result=" + result);
+
     }
 
     public static String reverse(String str) {
