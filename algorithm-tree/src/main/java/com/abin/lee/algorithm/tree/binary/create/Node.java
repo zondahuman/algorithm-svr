@@ -1,9 +1,9 @@
-package com.qunar.des.algorithm.tree.binary.find;
+package com.abin.lee.algorithm.tree.binary.create;
 
 /**
  * Created with IntelliJ IDEA.
  * User: abin
- * Date: 15-4-14 上午1:47
+ * Date: 15-4-14 上午12:28
  */
 public class Node {
     public int value;

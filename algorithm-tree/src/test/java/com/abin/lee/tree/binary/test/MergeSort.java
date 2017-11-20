@@ -1,4 +1,4 @@
-package com.abin.lee.tree.test;
+package com.abin.lee.tree.binary.test;
 
 import java.util.Arrays;
 
