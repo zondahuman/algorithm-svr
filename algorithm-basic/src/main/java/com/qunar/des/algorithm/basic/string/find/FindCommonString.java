@@ -14,11 +14,11 @@ public class FindCommonString {
         String str2 = "cdefghijk";
 //        String result = getMaxString(str1,str2);
 //        String result = getMaxCommon(str1,str2);
-//        System.out.println(result);
-        String str3 = "ababcar";
-
-        Integer result = getMaxNoDuplicateSubString(str3);
-        System.out.println("result="+result);
+        String result = getCommonStrLength(str1,str2);
+        System.out.println(result);
+//        String str3 = "ababcar";
+//        Integer result = getMaxNoDuplicateSubString(str3);
+//        System.out.println("result="+result);
     }
 
     /**
@@ -92,5 +92,27 @@ public class FindCommonString {
         return maxLength;
     }
 
+    public static String getCommonStrLength(String str1, String str2) {
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+        int len1 = str1.length();
+        int len2 = str2.length();
+        String min = null;
+        String max = null;
+        String target = null;
+        min = len1 <= len2 ? str1 : str2;
+        max = len1 >  len2 ? str1 : str2;
+        //最外层：min子串的长度，从最大长度开始
+        for (int i = min.length(); i >= 1; i--) {
+            //遍历长度为i的min子串，从0开始
+            for (int j = 0; j <= min.length() - i; j++) {
+                target = min.substring(j, j + i);
+                if (max.contains(target)) {
+                    return target;
+                }
+            }
+        }
+        return "";
+    }
 
 }
