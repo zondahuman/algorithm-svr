@@ -1,6 +1,5 @@
 package com.abin.lee.algorithm.tree.binary.common;
 
-import com.abin.lee.algorithm.tree.binary.create.Node;
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 import lombok.Getter;
 import lombok.Setter;

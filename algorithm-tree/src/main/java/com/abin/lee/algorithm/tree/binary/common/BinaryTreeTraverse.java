@@ -1,15 +1,11 @@
 package com.abin.lee.algorithm.tree.binary.common;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
-import com.sun.jmx.remote.internal.ArrayQueue;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Stack;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 
