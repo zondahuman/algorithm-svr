@@ -7,6 +7,7 @@ import java.util.Map;
  * Created with IntelliJ IDEA.
  * User: abin
  * Date: 15-4-23 上午3:55
+ * http://m.blog.csdn.net/qq_28618765/article/details/65627503
  */
 public class FindCommonString {
     public static void main(String[] args) {
@@ -14,11 +15,11 @@ public class FindCommonString {
         String str2 = "cdefghijk";
 //        String result = getMaxString(str1,str2);
 //        String result = getMaxCommon(str1,str2);
-        String result = getCommonStrLength(str1,str2);
-        System.out.println(result);
-//        String str3 = "ababcar";
-//        Integer result = getMaxNoDuplicateSubString(str3);
-//        System.out.println("result="+result);
+//        String result = getCommonStrLength(str1,str2);
+//        System.out.println(result);
+        String str3 = "ababcabcde";
+        Integer result = getMaxNoDuplicateSubString(str3);
+        System.out.println("result="+result);
     }
 
     /**
@@ -67,7 +68,7 @@ public class FindCommonString {
 
     /**
      * 求字符串中不包含重复字符的最长子串的长度
-     *
+     * http://m.blog.csdn.net/qq_28618765/article/details/65627503
      * @param param
      * @return
      */
