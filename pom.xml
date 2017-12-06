@@ -16,6 +16,7 @@
         <module>algorithm-tree</module>
         <module>algorithm-common</module>
         <module>algorithm-basic</module>
+        <module>algorithm-special</module>
     </modules>
 
 
