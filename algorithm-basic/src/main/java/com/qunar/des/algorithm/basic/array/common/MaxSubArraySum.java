@@ -5,6 +5,7 @@ package com.qunar.des.algorithm.basic.array.common;
  * algorithm-svr
  * com.qunar.des.algorithm.basic.array.common
  * 求最大子数组之和的方法解析（2种可选）
+ *  给定一个整数数组，找到一个具有最大和的子数组，返回其最大和。
  * http://www.jb51.net/article/101025.htm
  */
 public class MaxSubArraySum {
