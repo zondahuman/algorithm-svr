@@ -18,11 +18,36 @@ public class SinglistReverseTest {
         node1.next = node2 ;
         node2.next = node3 ;
         node3.next = node4;
+
+        System.out.println("node1 = " + JsonUtil.toJson(node1));
 //        ReverseNode result = reverseLoop(node1);
 //        System.out.println("result = " + JsonUtil.toJson(result));
-        ReverseNode result1 = reverseRecursive(node1);
-        System.out.println("result1 = " + JsonUtil.toJson(result1));
+//        ReverseNode result1 = reverseRecursive(node1);
+//        System.out.println("result1 = " + JsonUtil.toJson(result1));
+        ReverseNode result2 = reverseKGroup(node1, 3);
+        System.out.println("result2 = " + JsonUtil.toJson(result2));
     }
+
+    public static ReverseNode reverseKGroup(ReverseNode head, int k){
+        ReverseNode current = head;
+        int count = 0;
+        while(null != current && count != k){
+            current = current.next;
+            count++;
+        }
+        if(count == k){
+            current = reverseKGroup(current, k);
+            while(count-- > 0){
+                ReverseNode temp = head.next;
+                head.next = current;
+                current = head;
+                head = temp;
+            }
+            head = current;
+        }
+        return  head;
+    }
+
 
     public static ReverseNode reverseLoop(ReverseNode head){
         if(null == head || null == head.next)
