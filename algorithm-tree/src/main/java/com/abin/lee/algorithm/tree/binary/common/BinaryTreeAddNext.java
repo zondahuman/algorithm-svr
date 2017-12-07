@@ -14,6 +14,11 @@ import java.util.ArrayDeque;
  http://blog.csdn.net/fangjian1204/article/details/38403417
  */
 public class BinaryTreeAddNext {
+    /**
+     * 二叉树系列---标记二叉树中每个节点的next指针
+     * http://blog.csdn.net/bh_xiaoxinba/article/details/53030689
+     * @param args
+     */
     public static void main(String[] args) {
 
 
@@ -25,7 +30,7 @@ public class BinaryTreeAddNext {
         queue.add(node);
         while(!queue.isEmpty()){
             int levelLength = queue.size();
-            Node first = null, second = null;
+            Node first = null;
             while (levelLength > 0){
                 first = queue.remove();
                 
