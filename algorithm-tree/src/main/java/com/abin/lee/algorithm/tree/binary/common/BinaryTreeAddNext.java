@@ -28,7 +28,7 @@ public class BinaryTreeAddNext {
             Node first = null, second = null;
             while (levelLength > 0){
                 first = queue.remove();
-                
+
             }
         }
     }
