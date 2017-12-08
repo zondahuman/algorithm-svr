@@ -35,7 +35,7 @@ public class RandomNm {
 
         int[] input = new int[10];
         for (int i = 0; i <10 ; i++) {
-            input[i] = i;
+            input[i] = i+10;
         }
         System.out.println("input="+ JsonUtil.toJson(input));
         int[] result1 = getRandByArray(input, 5);
@@ -50,6 +50,7 @@ public class RandomNm {
 
     /**
      * 从list中随机取出count个不同的整数
+     * http://blog.csdn.net/ssh_kobe/article/details/6850754
      * @param list
      * @param count
      * @return relist
@@ -78,18 +79,15 @@ public class RandomNm {
 
 
     public static int[] getRandByArray(int[] input, int m){
-        int [] num = new int[m];//记录下标，长度为count, 最终返回结果
-        int size = input.length;//list的长度
-        for(int i=0; i<num.length; i++) {//循环count次，取出count个不同随机数
-            int r = (int)(Math.random()*size);
-            System.out.println("input==========="+JsonUtil.toJson(input)+" ,size="+size +", r="+r);
-            num[i] = input[r];
-            int temp = input[r];
-            input[r] = input[size-1];
+        int [] num = new int[m];//记录下标，长度为m, 最终返回结果
+        int size = input.length;//input的长度
+        for(int i=0; i<num.length; i++) {//m，取出m个不同随机数
+            int random = (int)(Math.random()*size);
+            num[i] = input[random];
+            int temp = input[random];
+            input[random] = input[size-1];
             input[size-1] = temp;
             size --;//每取出一个随机数，size就减1，即下一次在size-1的范围内取随机数，达到不重复的效果
-//            System.out.println("+++++++++++++++++++++++++++++++++++");
-            System.out.println("input-------------"+JsonUtil.toJson(input)+" ,size="+size);
         }
         return num;
     }
