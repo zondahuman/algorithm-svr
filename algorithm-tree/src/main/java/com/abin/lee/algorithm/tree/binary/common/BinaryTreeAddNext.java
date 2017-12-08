@@ -14,6 +14,25 @@ import java.util.ArrayDeque;
  http://blog.csdn.net/fangjian1204/article/details/38403417
  */
 public class BinaryTreeAddNext {
+    /**
+     * 二叉树系列---标记二叉树中每个节点的next指针
+     * http://blog.csdn.net/bh_xiaoxinba/article/details/53030689
+     * For example,
+     Given the following perfect binary tree,
+     1
+     / \
+     2 3
+     / \ / \
+     4 5 6 7
+
+     After calling your function, the tree should look like:
+     1 -> NULL
+     / \
+     2 -> 3 -> NULL
+     / \ / \
+     4->5->6->7 -> NULL
+     * @param args
+     */
     public static void main(String[] args) {
 
 
@@ -25,7 +44,7 @@ public class BinaryTreeAddNext {
         queue.add(node);
         while(!queue.isEmpty()){
             int levelLength = queue.size();
-            Node first = null, second = null;
+            Node first = null;
             while (levelLength > 0){
                 first = queue.remove();
 
