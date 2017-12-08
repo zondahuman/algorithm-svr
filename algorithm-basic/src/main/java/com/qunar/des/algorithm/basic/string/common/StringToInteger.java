@@ -10,7 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 public class StringToInteger {
 
     public static void main(String[] args) {
-        String param = "10234";
+        String param = "-10234";
         Integer result = atoi(param);
         System.out.println("result="+result);
         Integer result1 = transferToInt(param);
@@ -43,7 +43,7 @@ public class StringToInteger {
             return Integer.MAX_VALUE;
         if(num*sign <Integer.MIN_VALUE)
             return Integer.MIN_VALUE;
-        return num;
+        return sign*num;
     }
 
 
