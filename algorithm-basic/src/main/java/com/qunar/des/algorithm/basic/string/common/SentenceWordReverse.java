@@ -14,8 +14,6 @@ public class SentenceWordReverse {
      * \\ 反斜杠
      \' 单引号'
      \" 双引号"
-     \uxxxx 以十六进制指定Unicode字符输出
-     \dxxx 以八进制指定Unicode字符输出
      \b 倒退一个字符
      \f 换页
      \n 换行
