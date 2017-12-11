@@ -8,7 +8,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
  * com.abin.lee.algorithm.chain.single.rreverse.test
  * http://blog.csdn.net/guyuealian/article/details/51119499
  */
-public class SinglistReverseTest {
+public class SingleListReverseTest {
 
     public static void main(String[] args) {
         ReverseNode node1 = new ReverseNode(1);
@@ -24,9 +24,47 @@ public class SinglistReverseTest {
 //        System.out.println("result = " + JsonUtil.toJson(result));
 //        ReverseNode result1 = reverseRecursive(node1);
 //        System.out.println("result1 = " + JsonUtil.toJson(result1));
-        ReverseNode result2 = reverseKGroup(node1, 3);
+//        ReverseNode result2 = reverseKGroup(node1, 3);
+        ReverseNode result2 = reverseNGroup(node1, 3);
         System.out.println("result2 = " + JsonUtil.toJson(result2));
     }
+
+
+
+    public static ReverseNode reverseNGroup(ReverseNode head, int k){
+        ReverseNode current = head;
+        int count = 0;
+        // get next group  
+        while (null != current && count != k){
+            current = current.next;
+            count++;
+        }
+        if(count == k){
+            current = reverseKGroup(current, k);
+            while (count-- >0){
+                ReverseNode temp = head.next;
+                head.next = current;
+                current = head;
+                head = temp;
+            }
+            head = current;
+        }
+        return head;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static ReverseNode reverseKGroup(ReverseNode head, int k){
         ReverseNode current = head;
@@ -80,13 +118,13 @@ public class SinglistReverseTest {
         return reHead;
     }
 
-
-}
-
-class ReverseNode {
-    public int data;
-    public ReverseNode next;
-    public ReverseNode(int data){
-        this.data = data;
+    static class ReverseNode {
+        public int data;
+        public ReverseNode next;
+        public ReverseNode(int data){
+            this.data = data;
+        }
     }
+
 }
+
