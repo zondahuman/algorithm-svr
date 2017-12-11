@@ -25,7 +25,7 @@ public class SingleListReverseTest {
 //        ReverseNode result1 = reverseRecursive(node1);
 //        System.out.println("result1 = " + JsonUtil.toJson(result1));
 //        ReverseNode result2 = reverseKGroup(node1, 3);
-        ReverseNode result2 = reverseNGroup(node1, 3);
+        ReverseNode result2 = reverseNGroup(node1, 2);
         System.out.println("result2 = " + JsonUtil.toJson(result2));
     }
 
@@ -34,7 +34,7 @@ public class SingleListReverseTest {
     public static ReverseNode reverseNGroup(ReverseNode head, int k){
         ReverseNode current = head;
         int count = 0;
-        // get next group  
+        // get next group
         while (null != current && count != k){
             current = current.next;
             count++;
