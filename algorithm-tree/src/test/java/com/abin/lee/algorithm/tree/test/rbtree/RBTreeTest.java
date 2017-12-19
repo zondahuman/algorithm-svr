@@ -1,4 +1,4 @@
-package com.abin.lee.tree.rbtree.test;
+package com.abin.lee.algorithm.tree.test.rbtree;
 
 import com.abin.lee.algorithm.tree.rbtree.RBTree;
 
