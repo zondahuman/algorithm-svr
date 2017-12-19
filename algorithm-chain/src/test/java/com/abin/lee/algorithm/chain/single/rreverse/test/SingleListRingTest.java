@@ -116,15 +116,16 @@ public class SingleListRingTest {
             return null;
         return null;
     }
-    
+
+    static class RingNode {
+        public int data;
+        public RingNode next;
+        public RingNode(int data){
+            this.data = data;
+        }
+    }
     
 }
 
-class RingNode {
-    public int data;
-    public RingNode next;
-    public RingNode(int data){
-        this.data = data;
-    }
-}
+
 
