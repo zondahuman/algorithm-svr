@@ -25,7 +25,7 @@ public class SingleListInsertTest {
 //        System.out.println("nodeHeader="+ JsonUtil.toJson(nodeHeader));
 //        Node addTail = addTail(root, new Node(9));
 //        System.out.println("addTail="+ JsonUtil.toJson(addTail));
-        Node addAny = addAny(root, 2, new Node(9));
+        Node addAny = addAny(root, 3, new Node(9));
         System.out.println("addAny="+ JsonUtil.toJson(addAny));
 //        Node insert = insert(root, 3, 9);
 //        System.out.println("insert="+ JsonUtil.toJson(insert));
@@ -36,6 +36,7 @@ public class SingleListInsertTest {
         node.next = header;
         return node;
     }
+    //单链表尾部添加节点  java
     public static Node addTail(Node header, Node node){
         Node temp = header;
         while(null != temp.next){
