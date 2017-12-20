@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.chain.single.rreverse.test;
+package com.abin.lee.algorithm.chain.single.reverse.test;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 

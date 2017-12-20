@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.chain.single.list.model2;
+package com.abin.lee.algorithm.chain.single.model2.test;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 

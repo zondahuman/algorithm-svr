@@ -1,9 +1,9 @@
-package com.qunar.des.algorithm.chain.single.list.model2;
+package com.abin.lee.algorithm.chain.single.model3.test;
 
 /**
  * Created with IntelliJ IDEA.
  * User: abin
- * Date: 15-4-9 下午10:17
+ * Date: 15-4-12 上午2:11
  */
 public class Node {
     public int data;
@@ -12,4 +12,5 @@ public class Node {
     public Node(int data) {
         this.data = data;
     }
+
 }

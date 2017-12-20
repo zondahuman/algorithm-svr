@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.chain.single.list.model.test;
+package com.abin.lee.algorithm.chain.single.model.test;
 
 /**      
  * 创建人：subin.li   
