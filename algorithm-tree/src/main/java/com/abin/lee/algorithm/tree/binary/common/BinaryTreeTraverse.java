@@ -103,27 +103,28 @@ public class BinaryTreeTraverse {
 
     }
 
+    @Getter
+    @Setter
+    static class TraverseNode {
+        public int value;
+        public TraverseNode left;
+        public TraverseNode right;
+
+        public TraverseNode() {
+        }
+
+        public TraverseNode(int value) {
+            this.value = value;
+        }
+
+        public TraverseNode(int value, TraverseNode left, TraverseNode right) {
+            this.value = value;
+            this.left = left;
+            this.right = right;
+        }
+
+
+    }
+
 }
 
-@Getter
-@Setter
-class TraverseNode {
-    public int value;
-    public TraverseNode left;
-    public TraverseNode right;
-
-    public TraverseNode() {
-    }
-
-    public TraverseNode(int value) {
-        this.value = value;
-    }
-
-    public TraverseNode(int value, TraverseNode left, TraverseNode right) {
-        this.value = value;
-        this.left = left;
-        this.right = right;
-    }
-
-
-}

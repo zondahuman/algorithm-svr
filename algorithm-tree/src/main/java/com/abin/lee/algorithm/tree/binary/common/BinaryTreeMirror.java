@@ -106,28 +106,29 @@ public class BinaryTreeMirror {
 
 
     }
+    @Getter
+    @Setter
+    static class MirrorNode {
+        public int value;
+        public MirrorNode left;
+        public MirrorNode right;
+
+        public MirrorNode() {
+        }
+
+        public MirrorNode(int value) {
+            this.value = value;
+        }
+
+        public MirrorNode(int value, MirrorNode left, MirrorNode right) {
+            this.value = value;
+            this.left = left;
+            this.right = right;
+        }
+
+
+    }
 }
 
 
-@Getter
-@Setter
-class MirrorNode {
-    public int value;
-    public MirrorNode left;
-    public MirrorNode right;
 
-    public MirrorNode() {
-    }
-
-    public MirrorNode(int value) {
-        this.value = value;
-    }
-
-    public MirrorNode(int value, MirrorNode left, MirrorNode right) {
-        this.value = value;
-        this.left = left;
-        this.right = right;
-    }
-
-
-}

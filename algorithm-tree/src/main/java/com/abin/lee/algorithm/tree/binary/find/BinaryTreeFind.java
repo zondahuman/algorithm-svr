@@ -7,7 +7,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
  * User: abin
  * Date: 15-4-14 上午1:48
  */
-public class BinaryTree {
+public class BinaryTreeFind {
     private Node root;
 
     public void addChild(int data) {
@@ -73,7 +73,7 @@ public class BinaryTree {
 
 
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
+        BinaryTreeFind binaryTree = new BinaryTreeFind();
         binaryTree.addChild(5);
         binaryTree.addChild(1);
         binaryTree.addChild(3);
@@ -83,5 +83,18 @@ public class BinaryTree {
         Node findNode = binaryTree.find(3);
         System.out.println("findNode=" + JsonUtil.toJson(findNode));
         binaryTree.middle(binaryTree.root);
+    }
+
+    public static class Node {
+        public int value;
+        public Node left;
+        public Node right;
+
+        public Node() {
+        }
+
+        public Node(int value) {
+            this.value = value;
+        }
     }
 }
