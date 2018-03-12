@@ -57,7 +57,12 @@ public class LevelFloorPrint {
         }
     }
 
-
+    /**
+     * 1
+     2 3
+     4 5 6
+     7 8
+     */
     public static class TreeNode {
         int val = 0;
         TreeNode left = null;
