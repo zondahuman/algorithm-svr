@@ -29,7 +29,8 @@ public class LevelFloorPrint {
         t3.right = t6;
         t5.left = t7;
         t5.right = t8;
-        new LevelFloorPrint().printFloor(t1);
+//        new LevelFloorPrint().printFloor(t1);
+        new LevelFloorPrint().printFloors(t1);
 
     }
 
@@ -54,6 +55,28 @@ public class LevelFloorPrint {
                 System.out.println();
                 last = nextLast ;
             }
+        }
+    }
+
+
+    public void printFloors(TreeNode root) throws InterruptedException {
+        if (null == root) return;
+        BlockingQueue<TreeNode> queue = new LinkedBlockingDeque<>();
+        queue.put(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i <size ; i++) {
+                TreeNode node = queue.take();
+                System.out.print(node.val +" ");
+                if(node.left != null){
+                    queue.put(node.left);
+                }
+                if(node.right != null){
+                    queue.put(node.right);
+                }
+            }
+            System.out.println();
+
         }
     }
 
