@@ -9,5 +9,5 @@ package com.qunar.des.algorithm.basic.string.common;
 public class FullLineUp {
 
 
-    
+
 }
