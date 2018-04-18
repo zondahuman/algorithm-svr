@@ -1,5 +1,6 @@
 package com.qunar.des.algorithm.basic.string.common;
 
+import com.google.common.primitives.Ints;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -15,6 +16,11 @@ public class StringToInteger {
         System.out.println("result="+result);
         Integer result1 = transferToInt(param);
         System.out.println("result1="+result1);
+
+        Integer result2 = Integer.parseInt(param);
+        System.out.println("result2="+result2);
+        Integer result3 = Ints.tryParse(param);
+        System.out.println("result3="+result3);
     }
 
     public static Integer transferToInt(String param){
