@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.chain.single.list.basic.cross;
+package com.abin.lee.algorithm.chain.single.list.basic.cross;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
@@ -32,7 +32,7 @@ public class SingList {
 		return flag;
 	}
 	//判断连个链表是否相交
-	public boolean checkCross(SingNode singNode1,SingNode singNode2){
+	public boolean checkCross(SingNode singNode1, SingNode singNode2){
 		boolean flag = false;
 		int data1 = 0;
 		int data2 = 0;

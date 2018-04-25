@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.chain.single.list.basic.delete;
+package com.abin.lee.algorithm.chain.single.list.basic.delete;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 

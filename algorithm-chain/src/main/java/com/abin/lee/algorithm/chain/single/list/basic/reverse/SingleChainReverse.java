@@ -1,8 +1,6 @@
-package com.qunar.des.algorithm.chain.single.list.basic.reverse;
+package com.abin.lee.algorithm.chain.single.list.basic.reverse;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by abin on 2017/12/7 14:16.

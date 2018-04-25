@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.chain.single.list.basic.common;
+package com.abin.lee.algorithm.chain.single.list.basic.common;
 
 /**
  * Created by abin on 2017/11/26 2017/11/26.

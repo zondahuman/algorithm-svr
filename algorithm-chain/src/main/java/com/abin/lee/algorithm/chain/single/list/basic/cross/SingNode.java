@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.chain.single.list.basic.cross;
+package com.abin.lee.algorithm.chain.single.list.basic.cross;
 
 /**      
  * 创建人：subin.li   

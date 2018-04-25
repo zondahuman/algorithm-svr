@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.chain.single.list.basic;
+package com.abin.lee.algorithm.chain.single.list.basic;
 
 /**
  * Created with IntelliJ IDEA.
