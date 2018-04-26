@@ -6,6 +6,7 @@ package com.abin.lee.algorithm.basic;
  * Date: 15-5-24 下午11:16
  */
 public class TestContain {
+
     public static boolean bao(String str,String sub){
         char[] father = str.toCharArray();
         char[] son = sub.toCharArray();

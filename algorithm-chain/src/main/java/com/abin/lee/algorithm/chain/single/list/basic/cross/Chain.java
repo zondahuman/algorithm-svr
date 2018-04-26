@@ -4,7 +4,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 import org.junit.Test;
 
 /**
- * 创建人：subin.li
+ * 创建人：abin
  * 创建时间：2014年11月18日 上午9:56:22
  */
 public class Chain {

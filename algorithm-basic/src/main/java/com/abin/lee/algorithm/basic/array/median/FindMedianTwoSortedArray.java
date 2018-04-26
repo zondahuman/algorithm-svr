@@ -1,8 +1,9 @@
 package com.abin.lee.algorithm.basic.array.median;
 
 /**
- * 创建人：subin.li 创建时间：2014年11月16日 下午6:09:36
- * 
+ * 创建人：abin
+ * 创建时间：2014年11月16日 下午6:09:36
+ *
  */
 public class FindMedianTwoSortedArray {
 

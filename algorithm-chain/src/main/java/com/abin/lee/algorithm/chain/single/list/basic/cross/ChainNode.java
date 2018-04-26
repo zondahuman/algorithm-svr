@@ -1,7 +1,7 @@
 package com.abin.lee.algorithm.chain.single.list.basic.cross;
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年11月18日 上午9:51:39     
  *     
  */

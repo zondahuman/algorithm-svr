@@ -1,7 +1,7 @@
 package com.qunar.des.algorithm.leetcode.reverse;
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年11月8日 下午7:54:48     
  *     
  */

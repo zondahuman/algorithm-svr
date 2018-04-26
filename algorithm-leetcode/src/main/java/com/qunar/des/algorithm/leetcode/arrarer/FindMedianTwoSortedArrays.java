@@ -1,7 +1,8 @@
 package com.qunar.des.algorithm.leetcode.arrarer;
 
 /**
- * 创建人：subin.li 创建时间：2014年11月16日 下午5:47:56
+ * 创建人：abin
+ * 创建时间：2014年11月16日 下午5:47:56
  * 
  */
 public class FindMedianTwoSortedArrays {

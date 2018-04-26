@@ -3,7 +3,7 @@ package com.abin.lee.algorithm.basic.array.median;
 import java.util.Arrays;
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年10月30日 下午9:12:22     
  * @version      
  */

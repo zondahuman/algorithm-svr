@@ -3,7 +3,8 @@ package com.qunar.des.algorithm.sort.fast;
 import java.util.Arrays;
 
 /**
- * 创建人：subin.li 创建时间：2014年10月31日 上午12:03:27
+ * 创建人：abin
+ * 创建时间：2014年10月31日 上午12:03:27
  * 
  * @version
  */

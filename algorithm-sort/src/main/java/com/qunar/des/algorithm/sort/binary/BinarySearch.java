@@ -2,7 +2,7 @@ package com.qunar.des.algorithm.sort.binary;
 
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年10月31日 下午5:05:55     
  * @version      
  */

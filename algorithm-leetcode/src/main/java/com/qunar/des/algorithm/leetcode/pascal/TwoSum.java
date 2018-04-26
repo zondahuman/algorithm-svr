@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年11月7日 下午11:19:45     
  * Two Sum     
  */

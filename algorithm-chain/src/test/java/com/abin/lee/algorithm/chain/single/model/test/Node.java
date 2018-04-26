@@ -1,7 +1,7 @@
 package com.abin.lee.algorithm.chain.single.model.test;
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年11月17日 下午10:18:21     
  *     
  */

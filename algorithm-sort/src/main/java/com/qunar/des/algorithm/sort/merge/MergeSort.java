@@ -3,7 +3,7 @@ package com.qunar.des.algorithm.sort.merge;
 import java.util.Arrays;
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年10月30日 下午9:34:24     
  * @version      
  */

@@ -3,7 +3,7 @@ package com.qunar.des.algorithm.sort.shell;
 import java.util.Arrays;
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年11月7日 下午2:04:41     
  * @version      
  */

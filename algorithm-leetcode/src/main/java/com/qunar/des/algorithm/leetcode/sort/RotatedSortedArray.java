@@ -4,7 +4,7 @@ import org.apache.commons.io.EndianUtils;
 
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年11月10日 下午3:41:56     
  * Find Minimum in Rotated Sorted Array    
  */

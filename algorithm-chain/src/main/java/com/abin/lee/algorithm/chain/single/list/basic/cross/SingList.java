@@ -4,7 +4,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
 
 /**      
- * 创建人：subin.li   
+ * 创建人：abin
  * 创建时间：2014年11月19日 下午6:14:48     
  *     
  */
