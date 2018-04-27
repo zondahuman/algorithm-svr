@@ -29,7 +29,7 @@ public class LongestNoRepeatingSubString {
      * @param param
      * @return
      */
-    public static Integer getMaxNoDuplicateSubString(String param) {
+    public static Integer longestSubMap(String param) {
         Map<Character, Integer> map = new HashMap<Character, Integer>();
         //map中的键key存放字符串中出现的字符，值value存放该字符当前的位置
         int maxLength = 0;    //保存最长字串长度
