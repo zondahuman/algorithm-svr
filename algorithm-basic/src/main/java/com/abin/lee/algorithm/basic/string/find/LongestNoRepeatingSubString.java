@@ -13,18 +13,19 @@ import java.util.Set;
  * http://xfhnever.com/2014/10/30/algorithm-lnrs/
  * http://www.lpnote.com/2017/09/08/leetcode-3-longest-substring-without-repeating-characters/
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/solution/
- *
  */
 public class LongestNoRepeatingSubString {
     public static void main(String[] args) {
         String str3 = "ababcabcde";
-        Integer result = getMaxNoDuplicateSubString(str3);
-        System.out.println("result="+result);
+//        Integer result = getMaxNoDuplicateSubString(str3);
+        Integer result = longestSubSet(str3);
+        System.out.println("result=" + result);
     }
 
     /**
      * 求字符串中不包含重复字符的最长子串的长度
      * http://m.blog.csdn.net/qq_28618765/article/details/65627503
+     *
      * @param param
      * @return
      */
@@ -50,17 +51,16 @@ public class LongestNoRepeatingSubString {
     }
 
 
-    public int lengthOfLongestSubstring(String s) {
+    public static int longestSubSet(String s) {
         int n = s.length();
         Set<Character> set = new HashSet<>();
         int ans = 0, i = 0, j = 0;
         while (i < n && j < n) {
             // try to extend the range [i, j]
-            if (!set.contains(s.charAt(j))){
+            if (!set.contains(s.charAt(j))) {
                 set.add(s.charAt(j++));
                 ans = Math.max(ans, j - i);
-            }
-            else {
+            } else {
                 set.remove(s.charAt(i++));
             }
         }
@@ -106,14 +106,14 @@ public class LongestNoRepeatingSubString {
         int current = 1;
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         map.put(str.charAt(0), 0);
-        for (int i=1; i<str.length(); i++) {
+        for (int i = 1; i < str.length(); i++) {
             if (map.get(str.charAt(i)) == null) {
                 map.put(str.charAt(i), i);
                 current++;
             } else {
                 if (lastIndex <= map.get(str.charAt(i))) {
-                    current = i-map.get(str.charAt(i));
-                    lastIndex = map.get(str.charAt(i))+1;
+                    current = i - map.get(str.charAt(i));
+                    lastIndex = map.get(str.charAt(i)) + 1;
                     map.remove(str.charAt(i));
                     map.put(str.charAt(i), i);
                 } else {
@@ -125,13 +125,12 @@ public class LongestNoRepeatingSubString {
 
             if (current > maxLen) {
                 maxLen = current;
-                index = i+1-maxLen;
+                index = i + 1 - maxLen;
             }
         }
 
-        return str.substring(index, index+maxLen);
+        return str.substring(index, index + maxLen);
     }
-
 
 
     public String getLnrs2(String str) {
@@ -145,18 +144,18 @@ public class LongestNoRepeatingSubString {
         dp[0] = 1;
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         map.put(str.charAt(0), 0);
-        for (int i=1; i<str.length(); i++) {
+        for (int i = 1; i < str.length(); i++) {
             if (map.get(str.charAt(i)) == null) {
                 map.put(str.charAt(i), i);
-                dp[i] = dp[i-1] + 1;
+                dp[i] = dp[i - 1] + 1;
             } else {
                 if (lastIndex <= map.get(str.charAt(i))) {
-                    dp[i] = i-map.get(str.charAt(i));
-                    lastIndex = map.get(str.charAt(i))+1;
+                    dp[i] = i - map.get(str.charAt(i));
+                    lastIndex = map.get(str.charAt(i)) + 1;
                     map.remove(str.charAt(i));
                     map.put(str.charAt(i), i);
                 } else {
-                    dp[i] = dp[i-1]+1;
+                    dp[i] = dp[i - 1] + 1;
                     map.remove(str.charAt(i));
                     map.put(str.charAt(i), i);
                 }
@@ -164,11 +163,11 @@ public class LongestNoRepeatingSubString {
 
             if (dp[i] > maxLen) {
                 maxLen = dp[i];
-                index = i+1-maxLen;
+                index = i + 1 - maxLen;
             }
         }
 
-        return str.substring(index, index+maxLen);
+        return str.substring(index, index + maxLen);
     }
 
     public String getLnrs3(String str) {
@@ -180,24 +179,24 @@ public class LongestNoRepeatingSubString {
 
         int[] dp = new int[str.length()];
         dp[0] = 1;
-        for (int i=1; i<str.length(); i++) {
-            for (int j=i-1; j>=lastIndex; j--) {
+        for (int i = 1; i < str.length(); i++) {
+            for (int j = i - 1; j >= lastIndex; j--) {
                 if (str.charAt(i) == str.charAt(j)) {
-                    dp[i] = i-j;
-                    lastIndex = j+1;
+                    dp[i] = i - j;
+                    lastIndex = j + 1;
                     break;
-                } else if (j == lastIndex){
-                    dp[i] = dp[i-1] + 1;
+                } else if (j == lastIndex) {
+                    dp[i] = dp[i - 1] + 1;
                 }
             }
 
             if (dp[i] > maxLen) {
                 maxLen = dp[i];
-                index = i+1-maxLen;
+                index = i + 1 - maxLen;
             }
         }
 
-        return str.substring(index, index+maxLen);
+        return str.substring(index, index + maxLen);
     }
 
     public String getLnrs4(String str) {
@@ -209,30 +208,25 @@ public class LongestNoRepeatingSubString {
 
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
-        for (int i=0; i<str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             map.clear();
             map.put(str.charAt(i), 1);
 
-            for (j=i+1; j<str.length(); j++) {
+            for (j = i + 1; j < str.length(); j++) {
                 if (map.get(str.charAt(j)) != null) {
                     break;
                 }
                 map.put(str.charAt(j), 1);
             }
 
-            if (j-i > maxLen) {
-                maxLen = j-i;
+            if (j - i > maxLen) {
+                maxLen = j - i;
                 index = i;
             }
         }
 
-        return str.substring(index, index+maxLen);
+        return str.substring(index, index + maxLen);
     }
-
-
-
-
-
 
 
 }
