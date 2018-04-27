@@ -110,7 +110,7 @@ public class LfuCache {
         for (int i = 0; i < 6; i++) {
             request.addCacheEntry(i, "lee" + i);
         }
-        System.out.println("request=" + JsonUtil.toJson(request));
+        System.out.println("request=" + JsonUtil.toJson(request.cacheMap));
         request.getCacheEntry(3);
         request.getCacheEntry(3);
         request.getCacheEntry(4);
