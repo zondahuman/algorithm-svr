@@ -17,6 +17,7 @@ public class FindSubInFatherString {
 //        System.out.println("findSub=" + findSub("abcdefghi", "bcde"));
         List<String> list = getAllSubStrings("abcd");
         System.out.println(JsonUtil.toJson(list));
+
     }
 
     public static boolean findSub(String father, String sub) {
