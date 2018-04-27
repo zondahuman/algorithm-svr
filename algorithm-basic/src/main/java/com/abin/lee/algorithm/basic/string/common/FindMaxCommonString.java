@@ -15,6 +15,13 @@ public class FindMaxCommonString {
         System.out.println("result=" + result);
     }
 
+    /**
+     * 常规解法
+     *
+     * @param str1
+     * @param str2
+     * @return
+     */
     private static String getMaxString(String str1, String str2) {
         String max = null;
         String min = null;
