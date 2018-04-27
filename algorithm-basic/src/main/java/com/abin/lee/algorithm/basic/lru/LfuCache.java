@@ -1,5 +1,8 @@
 package com.abin.lee.algorithm.basic.lru;
 
+import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -7,12 +10,13 @@ import java.util.Map;
  * Created by abin on 2018/4/27 12:50.
  * algorithm-svr
  * com.abin.lee.algorithm.basic.lru
+ * https://stackoverflow.com/questions/21117636/how-to-implement-a-least-frequently-used-lfu-cache
  */
 
 
 public class LfuCache {
 
-    class CacheEntry {
+    public static class CacheEntry {
         private String data;
         private int frequency;
 
@@ -38,9 +42,9 @@ public class LfuCache {
 
     }
 
-    private static int initialCapacity = 10;
+    public static int initialCapacity = 10;
 
-    private static LinkedHashMap<Integer, CacheEntry> cacheMap = new LinkedHashMap<Integer, CacheEntry>();
+    public LinkedHashMap<Integer, CacheEntry> cacheMap = new LinkedHashMap<Integer, CacheEntry>();
     /* LinkedHashMap is used because it has features of both HashMap and LinkedList.
      * Thus, we can get an entry in O(1) and also, we can iterate over it easily.
      * */
@@ -93,10 +97,31 @@ public class LfuCache {
         return null; // cache miss
     }
 
-    public static boolean isFull() {
+    public boolean isFull() {
         if (cacheMap.size() == initialCapacity)
             return true;
 
         return false;
     }
+
+
+    public static void main(String[] args) {
+        LfuCache request = new LfuCache(5);
+        for (int i = 0; i < 6; i++) {
+            request.addCacheEntry(i, "lee" + i);
+        }
+        System.out.println("request=" + JsonUtil.toJson(request));
+        request.getCacheEntry(3);
+        request.getCacheEntry(3);
+        request.getCacheEntry(4);
+        request.getCacheEntry(4);
+        request.getCacheEntry(2);
+
+        System.out.println("request=" + JsonUtil.toJson(request));
+
+
+    }
+
+
+
 }
