@@ -5,7 +5,7 @@ package com.abin.lee.algorithm.basic.string.common;
  * 找出两个字符串的最大公共子串
  * https://blog.csdn.net/cleverlzc/article/details/49363541
  */
-public class MaxCommonString {
+public class FindMaxCommonString {
     public static void main(String[] args) {
 //        String str1 = "adcfgeheightkdeffcser";
 //        String str2 = "theightyye";
