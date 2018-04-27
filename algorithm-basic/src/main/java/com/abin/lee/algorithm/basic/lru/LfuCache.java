@@ -10,7 +10,7 @@ import java.util.Map;
  */
 
 
-public class LFUCache {
+public class LfuCache {
 
     class CacheEntry {
         private String data;
@@ -45,7 +45,7 @@ public class LFUCache {
      * Thus, we can get an entry in O(1) and also, we can iterate over it easily.
      * */
 
-    public LFUCache(int initialCapacity) {
+    public LfuCache(int initialCapacity) {
         this.initialCapacity = initialCapacity;
     }
 

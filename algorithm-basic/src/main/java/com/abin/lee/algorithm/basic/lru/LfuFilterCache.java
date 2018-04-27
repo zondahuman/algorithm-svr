@@ -9,6 +9,7 @@ import java.util.LinkedHashSet;
  * Created by abin on 2018/4/27 13:22.
  * algorithm-svr
  * com.abin.lee.algorithm.basic.lru
+ * https://www.cnblogs.com/weiyinfu/p/8822876.html
  */
 public class LfuFilterCache {
     public int capacity;//容量大小
