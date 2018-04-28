@@ -7,6 +7,7 @@ package com.abin.lee.algorithm.chain.single.list.basic.common;
  * http://blog.csdn.net/lavor_zl/article/details/42784247
  * http://blog.csdn.net/u011373710/article/details/54024366
  * https://www.cnblogs.com/xudong-bupt/p/3667729.html
+ * https://blog.csdn.net/thefutureisour/article/details/8174313
  */
 public class SingleListRing {
     public static void main(String[] args) {
