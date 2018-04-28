@@ -36,21 +36,35 @@ public class SingleChainReverse {
         node6.next = node7;
         System.out.println("node1=" + JsonUtil.toJson(node1));
 
-//        Node result = reverse(node1);
-//        System.out.println("result="+ JsonUtil.toJson(result));
-        Node result = reverseKGroup(node1, 3);
-        System.out.println("result=" + JsonUtil.toJson(result));
+        Node reverse = reverse(node1);
+        System.out.println("reverse="+ JsonUtil.toJson(reverse));
+//        Node reverseNode = reverseNode(node1);
+//        System.out.println("reverseNode="+ JsonUtil.toJson(reverseNode));
+        Node reverseKGroup = reverseKGroup(node1, 3);
+        System.out.println("reverseKGroup=" + JsonUtil.toJson(reverseKGroup));
+    }
+
+    public static Node reverseNode(Node root){
+        Node current = root ;
+        Node previous = null;
+        while(current != null){
+            Node next = current.next;
+            current.next = previous;
+            previous = current ;
+            current = next;
+        }
+        return previous;
     }
 
     public static Node reverse(Node node) {
         Node previous = node;
         Node current = node.next;
-        Node temp = null;
+        Node next = null;
         while (current != null) {
-            temp = current.next;
+            next = current.next;
             current.next = previous;
             previous = current;
-            current = temp;
+            current = next;
         }
         node.next = null;
         return previous;

@@ -1,6 +1,7 @@
 package com.abin.lee.algorithm.chain.single.list.basic.common;
 
 import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import org.junit.Test;
 
 /**
  * Created by abin on 2018/4/28 18:43.
@@ -36,6 +37,7 @@ public class SingListCommon {
         return false;
     }
 
+
     public static Node reverseNode(Node root){
         Node current = root ;
         Node previous = null;
@@ -61,10 +63,11 @@ public class SingListCommon {
         node3.next = node4;
         node4.next = node5;
         node5.next = node6;
-        node6.next = node2;
         System.out.println("node1 = " + JsonUtil.toJson(node1));
         Node reverseNode = reverseNode(node1);
         System.out.println("reverseNode = " + JsonUtil.toJson(reverseNode));
+
+        node6.next = node2;
         boolean result = haveRing(node1);
         System.out.println("result = " + result);
 //        Node entrance = ringEntrance(node1);
