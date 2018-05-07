@@ -15,8 +15,16 @@ import java.util.Set;
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/solution/
  */
 public class LongestNoRepeatingSubString {
+    /**
+     * 例子：
+     给定"abcabcbb"的答案是"abc"，长度是3。
+     给定"bbbbb"的答案是"b"，长度为1。
+     给定"pwwkew"的答案是"wke"，长度为3.请注意，答案必须是子字符串，"pwke"是子序列，而不是子字符串。
+     * @param args
+     */
     public static void main(String[] args) {
-        String str3 = "ababcabcde";
+//        String str3 = "ababcabcde";
+        String str3 = "pwwkew";
 //        Integer result = getMaxNoDuplicateSubString(str3);
         Integer result = longestSubSet(str3);
         System.out.println("result=" + result);
