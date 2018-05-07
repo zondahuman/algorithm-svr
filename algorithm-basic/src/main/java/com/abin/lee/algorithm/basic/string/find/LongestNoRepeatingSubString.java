@@ -72,6 +72,7 @@ public class LongestNoRepeatingSubString {
                 set.remove(s.charAt(i++));
             }
         }
+        System.out.println("set="+set);
         return ans;
     }
 
