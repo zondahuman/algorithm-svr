@@ -12,4 +12,24 @@
     <artifactId>algorithm-special</artifactId>
 
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.qunar.des</groupId>
+                <artifactId>algorithm-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.qunar.des</groupId>
+            <artifactId>algorithm-common</artifactId>
+        </dependency>
+    </dependencies>
+
+
+
 </project>

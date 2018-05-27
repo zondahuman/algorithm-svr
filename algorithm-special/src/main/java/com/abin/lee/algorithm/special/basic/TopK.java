@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.special.basic;
+package com.abin.lee.algorithm.special.basic;
 
 import java.util.Arrays;
 
