@@ -149,7 +149,7 @@ public class Maze {
 
     /**
      * 寻找可访问的邻接格，这里可以优化，不用list
-     *
+     *  {0, 2}, {0, -2}, {2, 0}, {-2, 0}
      * @param node
      * @return
      */
@@ -186,6 +186,6 @@ public class Maze {
     }
 
 
-    
+
 }
 
