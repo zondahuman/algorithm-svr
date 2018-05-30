@@ -184,5 +184,8 @@ public class Maze {
         m.makeMaze();
         m.printMaze();
     }
+
+
+    
 }
 

@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.special.basic;
+package com.abin.lee.algorithm.special.basic.maze;
 
 /**
  * Created by abin on 2018/5/26 23:15.
