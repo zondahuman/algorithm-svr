@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.sort.test.bubble;
+package com.qunar.des.algorithm.sort.bubble;
 
 import java.util.Arrays;
 
