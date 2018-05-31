@@ -11,6 +11,10 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
  * 找出一个无序数组的中位数 :  https://blog.csdn.net/oneday_789/article/details/76681764
  */
 public class FindMiddleNumInArray {
+    /**
+     * 采用快速排序
+     * @param args
+     */
     public static void main(String[] args) {
         int[] array1 = new int[]{3,4,2,1,5,6,7};
         sort(array1, 0, array1.length-1);
