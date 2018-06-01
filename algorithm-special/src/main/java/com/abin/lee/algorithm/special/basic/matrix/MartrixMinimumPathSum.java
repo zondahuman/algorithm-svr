@@ -17,7 +17,7 @@ public class MartrixMinimumPathSum {
 
     public static int minPathSum(int[][] grid) {
         if (grid.length == 0 || grid[0].length == 0) return 0;
-        int m = grid.length, n = grid[0].length;
+        int m = grid.length, n = grid[0].length; //m表示外层一位数组个数，n表示m里面的一维数组的个数
         int[] dp = new int[n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
