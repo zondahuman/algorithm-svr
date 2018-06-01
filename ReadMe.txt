@@ -47,6 +47,10 @@ https://leetcode-cn.com/problemset/all/?topicSlugs=array
 https://www.ojcoder.cn/   很牛逼的算法网站
 
 
+技术面试需要掌握的基础知识整理，欢迎编辑~
+github各类技术总结：
+https://github.com/lwc398555797/architect-awesome
+https://github.com/CyC2018/Interview-Notebook
 
 
 数组算法：
@@ -75,6 +79,7 @@ https://www.ojcoder.cn/   很牛逼的算法网站
 图上两点直接的最短距离(迪杰斯特拉)
 图的深度优先遍历
 图的广度优先遍历
+矩阵的总路径数
 
 
 动态规划：
