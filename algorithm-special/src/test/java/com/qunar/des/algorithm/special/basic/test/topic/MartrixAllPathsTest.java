@@ -11,6 +11,8 @@ public class MartrixAllPathsTest {
     public static void main(String[] args) {
         int allPath = allPath(3, 5);
         System.out.println("allPath=" + allPath);
+        int recursivePaths = recursivePaths(3, 5);
+        System.out.println("recursivePaths=" + recursivePaths);
     }
 
     public static int allPath(int m, int n){
@@ -24,6 +26,11 @@ public class MartrixAllPathsTest {
         return dp[n-1];
     }
 
-
+    public static int recursivePaths(int m, int n){
+        if(m ==1 || n ==1)
+            return 1;
+        int total = recursivePaths(m, n-1) + recursivePaths(m-1, n);
+        return total ;
+    }
 
 }

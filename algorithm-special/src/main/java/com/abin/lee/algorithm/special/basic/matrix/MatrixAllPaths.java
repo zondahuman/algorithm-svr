@@ -20,9 +20,26 @@ public class MatrixAllPaths {
     public static void main(String[] args) {
         int uniqueDpPaths = uniqueDpPaths(3, 5);
         System.out.println("uniqueDpPaths=" + uniqueDpPaths);
-        int uniqueCombinationPaths = uniqueCombinationPaths(3, 5);
+//        int uniqueCombinationPaths = uniqueCombinationPaths(3, 5);
 //        int paths1 = uniqueCombinationPaths(5, 3);
-        System.out.println("uniqueCombinationPaths=" + uniqueCombinationPaths);
+//        System.out.println("uniqueCombinationPaths=" + uniqueCombinationPaths);
+        int uniqueRecursivePaths = uniqueRecursivePaths(3, 5);
+        System.out.println("uniqueRecursivePaths=" + uniqueRecursivePaths);
+    }
+
+    /**
+     * 矩阵全路径递归实现
+     * https://blog.csdn.net/zhouqianq/article/details/76922494
+     * @param m
+     * @param n
+     * @return
+     */
+    public static int uniqueRecursivePaths(int m, int n)//递归
+    {
+        if (m == 1 || n == 1)
+            return 1;
+        int total = uniqueRecursivePaths(m - 1, n) + uniqueRecursivePaths(m, n - 1);
+        return total;
     }
 
     /**
