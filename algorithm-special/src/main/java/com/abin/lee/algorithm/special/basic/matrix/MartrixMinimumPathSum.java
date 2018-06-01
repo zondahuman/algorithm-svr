@@ -6,6 +6,7 @@ package com.abin.lee.algorithm.special.basic.matrix;
  * com.abin.lee.algorithm.special.basic.matrix
  * 矩阵的最小路径和
  * https://github.com/zondahuman/Interview-Notebook/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3.md
+ * https://blog.csdn.net/u013309870/article/details/69569456
  */
 public class MartrixMinimumPathSum {
     public static void main(String[] args) {
