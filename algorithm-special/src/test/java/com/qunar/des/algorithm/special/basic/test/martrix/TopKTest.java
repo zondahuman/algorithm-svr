@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.special.basic.test;
+package com.qunar.des.algorithm.special.basic.test.martrix;
 
 /**
  * Created by abin on 2017/12/6 2017/12/6.
