@@ -42,6 +42,48 @@ public class SingleList {
         return current;
     }
 
+    public Node findLastN(int n) {
+        Node totalNode = header;
+        int total = 0;
+        while (null != totalNode) {
+            totalNode = totalNode.next;
+            total++;
+        }
+        Node current = header;
+        int curNum = 0 ;
+        while (null != current) {
+            curNum++;
+            if (curNum == total - n) {
+                return current;
+            } else {
+                current = current.next;
+            }
+        }
+        return current;
+    }
+
+    public Node findLastNNode(int n) {
+        Node slowNode = header;
+        Node fastNode = header;
+        int already = 0;
+        while (null != fastNode) {
+            already++;
+            fastNode = fastNode.next;
+            if(already == n){
+                break;
+            }
+        }
+        while (null != slowNode) {
+            fastNode = fastNode.next;
+            if(null == fastNode){
+                return slowNode;
+            }
+            slowNode = slowNode.next;
+        }
+        return null;
+    }
+
+
     public static void main(String[] args) {
         SingleList singleList = new SingleList();
         singleList.addFirst("a");
@@ -54,5 +96,10 @@ public class SingleList {
         System.out.println("findNode=" + JsonUtil.toJson(findNode));
         Node findValueNode = singleList.find("d");
         System.out.println("findValueNode=" + JsonUtil.toJson(findValueNode));
+        Node findLastN = singleList.findLastN(2);
+        System.out.println("findLastN=" + JsonUtil.toJson(findLastN));
+        Node findLastNNode = singleList.findLastNNode(2);
+        System.out.println("findLastNNode=" + JsonUtil.toJson(findLastNNode));
+
     }
 }
