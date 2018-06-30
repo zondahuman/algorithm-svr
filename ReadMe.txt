@@ -51,6 +51,7 @@ https://www.ojcoder.cn/   很牛逼的算法网站
 github各类技术总结：
 https://github.com/lwc398555797/architect-awesome
 https://github.com/CyC2018/Interview-Notebook
+https://github.com/gouthampradhan/leetcode
 
 
 数组算法：
