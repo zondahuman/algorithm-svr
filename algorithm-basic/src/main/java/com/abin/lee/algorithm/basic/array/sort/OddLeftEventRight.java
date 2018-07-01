@@ -13,7 +13,7 @@ public class OddLeftEventRight {
         srotArray(params);
         System.out.println("params=" + JsonUtil.toJson(params));
     }
-    
+
     public static void srotArray(int[] params){
         int start = 0;
         int end = params.length-1;
