@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.leetcode.graph;
+package com.qunar.des.algorithm.leetcode.graph.undirect;
 
 import java.util.*;
 
