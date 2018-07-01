@@ -4,6 +4,8 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2018/7/1.
+ * https://blog.csdn.net/feeltouch/article/details/43835933
+ * https://blog.csdn.net/weixin_36554701/article/details/78570624
  * 能实现把一个数组元素中的奇数放左边，偶数放右边
  */
 public class OddLeftEventRight {
