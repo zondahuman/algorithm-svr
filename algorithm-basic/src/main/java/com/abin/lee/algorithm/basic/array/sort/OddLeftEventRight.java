@@ -11,7 +11,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 public class OddLeftEventRight {
 
     public static void main(String[] args) {
-        int[] params = new int[]{1, 2, 3, 4, 5, 10};
+        int[] params = new int[]{1, 2, 3, 4, 5, 10, 7, 9};
         srotArray(params);
         System.out.println("params=" + JsonUtil.toJson(params));
     }
