@@ -1,23 +1,33 @@
 package com.qunar.des.algorithm.leetcode.graph.direct;
 
+import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by abin on 2018/6/30.
  * https://leetcode.com/problems/all-paths-from-source-to-target/solution/
+ * 图算法之求两点之间的所有路径(java)
  */
 public class AllPathsPassByGraph {
 
     public static void main(String[] args) {
-
+        int[][] graph = {
+                {1,0,0,1},
+                {0,1,0,0},
+                {0,0,1,0},
+                {0,0,0,1}
+        };
+        List<List<Integer>> list = allPathsSourceTarget(graph);
+        System.out.println("list="+ JsonUtil.toJson(list));
     }
 
-    public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+    public static List<List<Integer>> allPathsSourceTarget(int[][] graph) {
         return solve(graph, 0);
     }
 
-    public List<List<Integer>> solve(int[][] graph, int node) {
+    public static List<List<Integer>> solve(int[][] graph, int node) {
         int N = graph.length;
         List<List<Integer>> ans = new ArrayList();
         if (node == N - 1) {
