@@ -9,15 +9,16 @@ import java.util.Map;
  * Created by abin on 2018/7/8.
  * 整形数组求出现次数最多的数字
  * https://blog.csdn.net/legend050709/article/details/26580249
- *
  */
 public class AppearMaxFrequencyInArray {
 
 
     public static void main(String[] args) {
-        int[] input = { 11, 11, 2, 2, 4, 5, 4, 2 };
+        int[] input = {11, 11, 2, 2, 4, 5, 4, 2,2,2};
         int result1 = maxFrequence(input);
         System.out.println("result1=" + result1);
+//        int result2 = majorityElement(input);
+//        System.out.println("result2=" + result2);
     }
 
 
@@ -25,18 +26,18 @@ public class AppearMaxFrequencyInArray {
         int num = 0;
         Map<Integer, Integer> map = Maps.newHashMap();
         for (int i = 0; i < input.length; i++) {
-            if(map.containsKey(input[i])){
+            if (map.containsKey(input[i])) {
                 int temp = map.get(input[i]);
                 map.put(input[i], ++temp);
-            }else{
+            } else {
                 map.put(input[i], 1);
             }
         }
         int temp = 0;
-        for (Iterator<Map.Entry<Integer, Integer>> iterator = map.entrySet().iterator(); iterator.hasNext();) {
+        for (Iterator<Map.Entry<Integer, Integer>> iterator = map.entrySet().iterator(); iterator.hasNext(); ) {
             Map.Entry<Integer, Integer> entry = iterator.next();
-            int count = entry.getValue() ;
-            if(count > temp) {
+            int count = entry.getValue();
+            if (count > temp) {
                 temp = count;
                 num = entry.getKey();
             }
@@ -44,12 +45,10 @@ public class AppearMaxFrequencyInArray {
         return num;
     }
 
-    public static int getMax(int[] input){
+    public static int getMax(int[] input) {
 
 
-
-
-        return  0;
+        return 0;
     }
 
 
