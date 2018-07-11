@@ -9,7 +9,7 @@ import java.util.List;
  * https://mp.weixin.qq.com/s?__biz=MzU2NDU0MjE4MA==&mid=2247483805&idx=1&sn=7589082654a98a43fe68e2b7ae4e6c81&chksm=fc482e16cb3fa7008d9993de550bf323d70972625964ba7cbd80b0675b92704e5f2d30196bce&scene=0#rd
  */
 public class StringSplit {
-    
+
     public static void main(String[] args) {
         String str = "ababcbacadefegdehijhklij";
         List<Integer> list = partitionLabels(str);
