@@ -42,6 +42,9 @@ https://acm.sjtu.edu.cn/OnlineJudge/
 https://leetcode.com/
 http://www.geeksforgeeks.org/
 http://www.lintcode.com/zh-cn/
+牛客网：
+https://www.nowcoder.com/ta/coding-interviews?page=1
+
 
 https://leetcode-cn.com/problemset/all/?topicSlugs=array
 https://www.ojcoder.cn/   很牛逼的算法网站
