@@ -34,6 +34,7 @@ public class ReverseSingleList {
         listNode1.next = listNode2;
         listNode2.next = listNode3;
 
+        System.out.println("listNode1=" + JsonUtil.toJson(listNode1));
         ListNode result1 = new ReverseSingleList().ReverseList(listNode1);
         System.out.println("result1=" + JsonUtil.toJson(result1));
 
