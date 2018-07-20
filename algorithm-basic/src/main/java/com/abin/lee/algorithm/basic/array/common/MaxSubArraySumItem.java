@@ -12,7 +12,7 @@ import java.util.List;
  * algorithm-svr
  * com.qunar.des.algorithm.basic.array.common
  * 最大子数组之和对应的子数组
- * 给定一个整数数组，找到一个具有最大和的子数组，返回其最大的子数组
+ * 给定一个整数数组(包含正负数)，找到一个具有最大和的子数组，返回其最大的子数组
  * https://blog.csdn.net/whuqin/article/details/6005939
  */
 public class MaxSubArraySumItem {
