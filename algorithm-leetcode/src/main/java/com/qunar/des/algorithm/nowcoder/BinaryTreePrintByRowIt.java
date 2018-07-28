@@ -8,11 +8,11 @@ import java.util.LinkedList;
 
 /**
  * Created by abin on 2018/7/26.
- * 把二叉树打印成多行
+ * 按之字形顺序打印二叉树
  * 题目描述
- 从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。
+ 请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。
  */
-public class BinaryTreePrintByRow {
+public class BinaryTreePrintByRowIt {
 
     ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
@@ -23,6 +23,7 @@ public class BinaryTreePrintByRow {
         queue.add(pRoot);
         TreeNode last = pRoot;
         TreeNode currentLast = pRoot;
+        int count = 0;
         while (!queue.isEmpty()) {
             TreeNode temp = queue.remove();
             nodeList.add(temp.val);
@@ -35,9 +36,18 @@ public class BinaryTreePrintByRow {
                 currentLast = temp.right;
             }
             if (temp == last) {
-                list.add(new ArrayList<Integer>(nodeList));
+                if(count%2 == 0) {
+                    list.add(new ArrayList<Integer>(nodeList));
+                }else{
+                    ArrayList<Integer> nodeList1 = new ArrayList<Integer>();
+                    for (int i = nodeList.size()-1; i >0 ; i--) {
+                        nodeList1.add(nodeList.get(i));
+                    }
+                    list.add(new ArrayList<Integer>(nodeList1));
+                }
                 nodeList.clear();
                 last = currentLast;
+                count++;
             }
         }
         return list;
@@ -114,7 +124,7 @@ public class BinaryTreePrintByRow {
         t3.right = t6;
         t5.left = t7;
         t5.right = t8;
-        ArrayList<ArrayList<Integer>> list = new BinaryTreePrintByRow().Print(t1);
+        ArrayList<ArrayList<Integer>> list = new BinaryTreePrintByRowIt().Print(t1);
 //        ArrayList<ArrayList<Integer>> list = new BinaryTreePrintByRow().Print1(t1);
 //        ArrayList<ArrayList<Integer>> list = new BinaryTreePrintByRow().Print2(t1);
         System.out.println("list=" + JsonUtil.toJson(list));
