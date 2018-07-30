@@ -5,7 +5,8 @@ package com.qunar.des.algorithm.leetcode.test;
  */
 public class LeetCodeTest {
     public static void main(String[] args) {
-
+        int param = 1 << 30;
+        System.out.println("param="+param);
     }
 
 
