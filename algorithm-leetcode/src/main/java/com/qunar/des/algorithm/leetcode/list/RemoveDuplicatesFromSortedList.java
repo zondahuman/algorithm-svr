@@ -4,19 +4,26 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2018/8/5.
- * 237. Delete Node in a Linked List
- * https://leetcode.com/problems/delete-node-in-a-linked-list/description/
- * https://leetcode.com/problems/delete-node-in-a-linked-list/discuss/142771/Simple-and-complete-Java-solution-beating-100-of-Java-submissions
+ * 83. Remove Duplicates from Sorted List
+ https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
  */
-public class DeleteNodeInLinkedList {
-    public void deleteNode(ListNode node) {
-        node.val = node.next.val;
-        node.next = node.next.next;
+public class RemoveDuplicatesFromSortedList {
+
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode current = head;
+        while(current != null && current.next != null ){
+            if(current.val == current.next.val){
+                current.next = current.next.next ;
+            }else{
+                current = current.next;
+            }
+        }
+        return head ;
     }
 
     public static void main(String[] args) {
         int one = 1;
-        int two = 6;
+        int two = 1;
         int three = 2;
         ListNode listNode1 = new ListNode(one);
         ListNode listNode2 = new ListNode(two);
@@ -34,10 +41,8 @@ public class DeleteNodeInLinkedList {
         listNode11.next = listNode22;
         listNode22.next = listNode33;
 
-        System.out.println("listNode1=" + JsonUtil.toJson(listNode1));
-        new DeleteNodeInLinkedList().deleteNode(listNode1);
-//        ListNode result = new DeleteNodeInLinkedList().deleteNode(listNode1);
-        System.out.println("listNode1=" + JsonUtil.toJson(listNode1));
+        ListNode result = new RemoveDuplicatesFromSortedList().deleteDuplicates(listNode1);
+        System.out.println("result=" + JsonUtil.toJson(result));
     }
 
 
@@ -49,5 +54,4 @@ public class DeleteNodeInLinkedList {
             val = x;
         }
     }
-
 }
