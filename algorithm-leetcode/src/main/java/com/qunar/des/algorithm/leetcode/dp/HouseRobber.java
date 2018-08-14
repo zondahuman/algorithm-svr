@@ -10,7 +10,6 @@ package com.qunar.des.algorithm.leetcode.dp;
 public class HouseRobber {
 
     public int rob(int[] nums) {
-        int max = 0;
         if (nums.length <= 1)
             return nums[0] == 0 ? 0 : nums[0];
         int pre = nums[0];
@@ -20,7 +19,7 @@ public class HouseRobber {
             cur = Math.max(pre + nums[i], cur);
             pre = temp;
         }
-        return max;
+        return cur;
     }
 
 
