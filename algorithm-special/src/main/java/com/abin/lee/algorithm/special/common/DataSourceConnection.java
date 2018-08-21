@@ -42,5 +42,17 @@ public class DataSourceConnection {
     }
 
 
+    public static void main(String[] args) {
+        String ids = "2018082121001004950595545047";
+        Long idl = Long.MAX_VALUE;
+        System.out.println("idl="+idl);
+        System.out.println("ids="+ids);
+    }
+
+
+
+
+
+
 
 }
