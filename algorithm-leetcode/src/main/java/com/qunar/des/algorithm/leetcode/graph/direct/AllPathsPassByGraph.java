@@ -48,15 +48,13 @@ public class AllPathsPassByGraph {
 //        };
         int[][] graph = {{1,2}, {3}, {3}, {}};
 //        int[][] graph = {{1,2}, {3,4}, {5}, {}};
-//        List<List<Integer>> list = allPathsSourceTarget(graph);
-        List<List<Integer>> list = allPathsSourceTarget1(graph);
+        List<List<Integer>> list = allPathsSourceTarget(graph);
+//        List<List<Integer>> list = allPathsSourceTarget1(graph);
         System.out.println("list="+ JsonUtil.toJson(list));
     }
-
     public static List<List<Integer>> allPathsSourceTarget(int[][] graph) {
         return solve(graph, 0);
     }
-
     public static List<List<Integer>> solve(int[][] graph, int node) {
         int N = graph.length;
         List<List<Integer>> ans = new ArrayList();
@@ -66,7 +64,6 @@ public class AllPathsPassByGraph {
             ans.add(path);
             return ans;
         }
-
         for (int nei: graph[node]) {
             for (List<Integer> path: solve(graph, nei)) {
                 path.add(0, node);
