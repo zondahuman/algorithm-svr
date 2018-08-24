@@ -46,8 +46,8 @@ public class AllPathsPassByGraph {
 //                {0,0,1,0},
 //                {0,0,0,1}
 //        };
-        int[][] graph = {{1,2}, {3}, {3}, {}};
-//        int[][] graph = {{1,2}, {2,3}, {3}, {}};
+//        int[][] graph = {{1,2}, {3}, {3}, {}};
+        int[][] graph = {{1,2}, {2,3}, {3}, {}};
         List<List<Integer>> list = allPathsSourceTarget(graph);
 //        List<List<Integer>> list = allPathsSourceTarget1(graph);
         System.out.println("list="+ JsonUtil.toJson(list));
