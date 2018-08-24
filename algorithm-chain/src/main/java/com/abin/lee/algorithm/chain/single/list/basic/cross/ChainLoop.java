@@ -7,7 +7,7 @@ import org.junit.Test;
  * 创建人：abin
  * 创建时间：2014年11月18日 上午9:56:22
  */
-public class Chain {
+public class ChainLoop {
     private ChainNode header;
     private int size;
     private int modCount;
@@ -45,20 +45,20 @@ public class Chain {
 
 
     public static void main(String[] args) {
-        Chain chain = new Chain();
+        ChainLoop chain = new ChainLoop();
         chain.add(0);
         chain.add(1);
         chain.add(2);
         chain.add(3);
         chain.add(4);
         System.out.println(JsonUtil.toJson(chain.header));
-        boolean flag = new Chain().isLoop(chain.header);
+        boolean flag = new ChainLoop().isLoop(chain.header);
         System.out.println("flag=" + flag);
     }
 
     @Test
     public void testAdd() {
-        Chain chain = new Chain();
+        ChainLoop chain = new ChainLoop();
         chain.add(0);
         chain.add(1);
         chain.add(2);
@@ -69,7 +69,7 @@ public class Chain {
 
     @Test
     public void testIsLoop() {
-        Chain chain = new Chain();
+        ChainLoop chain = new ChainLoop();
         chain.add(0);
         chain.add(1);
         chain.add(2);
@@ -90,7 +90,24 @@ public class Chain {
         chain.add(5);
         chain.add(6);
         System.out.println(JsonUtil.toJson(chain.header));
-        boolean flag = new Chain().isLoop(chain.header);
+        boolean flag = new ChainLoop().isLoop(chain.header);
         System.out.println("flag=" + flag);
+    }
+
+
+    public static class ChainNode {
+        public int data;
+        public ChainNode next;
+        /**
+         * @param data
+         * @param next
+         */
+        public ChainNode(int data, ChainNode next) {
+            super();
+            this.data = data;
+            this.next = next;
+        }
+
+
     }
 }

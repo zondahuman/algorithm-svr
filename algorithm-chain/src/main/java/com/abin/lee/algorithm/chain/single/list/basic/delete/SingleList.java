@@ -47,4 +47,17 @@ public class SingleList {
         Node deleteLast = singleList.deleteLast();
         System.out.println("deleteLast=" + JsonUtil.toJson(deleteLast));
     }
+
+
+    public static class Node {
+        public int data;
+        public Node next;
+
+        public Node(int data) {
+            this.data = data;
+        }
+
+    }
+
+
 }

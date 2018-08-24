@@ -54,4 +54,14 @@ public class SingleList {
         singleList.addAny(1, 9);
         System.out.println("singleList=" + JsonUtil.toJson(singleList.header));
     }
+
+    public static class Node {
+        public int data;
+        public Node next;
+        public Node(int data){
+            this.data = data;
+        }
+    }
+
+
 }

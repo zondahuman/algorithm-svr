@@ -8,7 +8,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
  * 创建时间：2014年11月19日 下午6:14:48     
  *     
  */
-public class SingList {
+public class SingList{
 	public SingNode header;
 	public void add(int data){
 		if(header == null){
@@ -73,5 +73,17 @@ public class SingList {
 		}
 //		boolean isCross = new SingList().checkCross(list1, list2);
 //		System.out.println("isCross="+isCross);
+	}
+
+
+
+	public static class SingNode {
+		public Integer data;
+		public SingNode next;
+		public SingNode(int data,SingNode next){
+			this.data = data;
+			this.next = next;
+		}
+
 	}
 }

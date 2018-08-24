@@ -75,4 +75,14 @@ public class SingleList {
         Node reverseNode = singleList.reverse1(singleList.header);
         System.out.println("recursiveNode="+ JsonUtil.toJson(reverseNode));
     }
+
+    public static class Node {
+        public int data;
+        public Node next;
+        public Node(int data){
+            this.data = data;
+        }
+    }
+
+
 }

@@ -102,4 +102,15 @@ public class SingleList {
         System.out.println("findLastNNode=" + JsonUtil.toJson(findLastNNode));
 
     }
+
+    public static class Node {
+        public String data;
+        public Node next;
+
+        public Node(String data) {
+            this.data = data;
+        }
+
+    }
+
 }

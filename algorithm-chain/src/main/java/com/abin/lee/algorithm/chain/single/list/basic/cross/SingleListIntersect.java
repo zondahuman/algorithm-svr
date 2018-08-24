@@ -47,13 +47,17 @@ public class SingleListIntersect {
     }
 
 
+    public static class IntersectNode {
+        public int data;
+        public IntersectNode next;
+        public IntersectNode(int data){
+            this.data = data;
+        }
+    }
+
+
+
 }
 
-class IntersectNode {
-    public int data;
-    public IntersectNode next;
-    public IntersectNode(int data){
-        this.data = data;
-    }
-}
+
 
