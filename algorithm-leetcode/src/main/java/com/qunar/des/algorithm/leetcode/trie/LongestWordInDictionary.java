@@ -5,6 +5,7 @@ package com.qunar.des.algorithm.leetcode.trie;
  * Longest Word in Dictionary
  * https://leetcode.com/problems/longest-word-in-dictionary/description/
  * https://blog.csdn.net/u014688145/article/details/78500466
+ * https://blog.csdn.net/xiakexiaohu/article/details/78512354
  */
 public class LongestWordInDictionary {
 
