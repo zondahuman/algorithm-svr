@@ -8,7 +8,7 @@ import java.util.Set;
  * 217. Contains Duplicate
  * https://leetcode.com/problems/contains-duplicate/description/
  */
-public class ContainsDuplicate217 {
+public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
         if (nums != null && nums.length > 0) {
             Set<Integer> set = new HashSet<Integer>(nums.length);
@@ -26,7 +26,7 @@ public class ContainsDuplicate217 {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3,4};
-        boolean result = new ContainsDuplicate217().containsDuplicate(nums);
+        boolean result = new ContainsDuplicate().containsDuplicate(nums);
         System.out.println("result=" + result);
     }
 
