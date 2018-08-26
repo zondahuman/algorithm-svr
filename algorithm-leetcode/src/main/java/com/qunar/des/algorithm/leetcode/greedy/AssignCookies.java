@@ -13,8 +13,9 @@ public class AssignCookies {
 
     public static void main(String[] args) {
         int[] param = new int[] {0,1,0};
+        int[] param2 = new int[] {0,2,1,0};
 //        int[] param = new int[] {0,2,1,0};
-        int result = new AssignCookies().findContentChildren(param);
+        int result = new AssignCookies().findContentChildren(param, param2);
         System.out.println("result=" + result);
     }
 
