@@ -4,6 +4,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2018/7/18.
+ * 合并有序链表
  * 21. Merge Two Sorted Lists
  * https://leetcode.com/problems/merge-two-sorted-lists/discuss/149720/My-Java-solution-easy-understanding
  * https://leetcode.com/problems/merge-two-sorted-lists/discuss/9715/Java-1-ms-4-lines-codes-using-recursion/155913

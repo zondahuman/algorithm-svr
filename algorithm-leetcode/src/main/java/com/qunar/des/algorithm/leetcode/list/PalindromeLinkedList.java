@@ -4,6 +4,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2018/8/5.
+ * 判断是否为回文链表
  * 234. Palindrome Linked List
  * https://leetcode.com/problems/palindrome-linked-list/description/
  * https://blog.csdn.net/u012249528/article/details/47124771
