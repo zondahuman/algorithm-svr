@@ -30,8 +30,8 @@ public class AssignCookies {
     public static void main(String[] args) {
 //        int[] param1 = new int[] {1,2,3};
 //        int[] param2 = new int[] {1,1};
-        int[] param1 = new int[]{1, 2};
-        int[] param2 = new int[]{1, 2, 3};
+        int[] param1 = new int[]{1, 2,3};
+        int[] param2 = new int[]{3};
         int result = new AssignCookies().findContentChildren(param1, param2);
         System.out.println("result=" + result);
     }
