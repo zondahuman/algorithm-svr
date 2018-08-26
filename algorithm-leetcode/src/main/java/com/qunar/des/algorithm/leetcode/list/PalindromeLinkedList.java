@@ -10,6 +10,17 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
  * https://blog.csdn.net/u012249528/article/details/47124771
  */
 public class PalindromeLinkedList {
+    /**
+     * 示例 1:
+     输入: 1->2
+     输出: false
+   
+     示例 2:
+     输入: 1->2->2->1
+     输出: true
+     * @param head
+     * @return
+     */
     public boolean isPalindrome(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
