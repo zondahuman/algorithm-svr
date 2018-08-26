@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.leetcode.dp;
+package com.qunar.des.algorithm.leetcode.greedy;
 
 /**
  * Created by abin on 2018/8/7.
