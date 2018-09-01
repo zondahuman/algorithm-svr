@@ -33,8 +33,8 @@ public class LruDefinitionCache {
     }
 
     public void set(Integer key, Integer value) {
-        Entry entry = hashMap.get(key);
-        if (entry != null) {
+        if (hashMap.get(key) != null) {
+            Entry entry = hashMap.get(key);
             entry.value = value;
             remove(entry);
             addHead(entry);
