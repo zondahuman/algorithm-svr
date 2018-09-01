@@ -4,6 +4,7 @@ import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by abin on 2018/9/1.
@@ -32,15 +33,43 @@ public class BinaryTreeInorderTraversal {
     }
 
 
+    public List<Integer> inorderTraversalLoop(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        while(current != null || !stack.isEmpty()){
+            while(current != null){
+                stack.push(current);
+                current =current.left;
+            }
+            current = stack.pop();
+            list.add(current.val);
+            current = current.right;
+        }
+        return list;
+    }
 
+
+    /**
+     * Input: [1,null,2,3]
+     1
+       \
+        2
+      /
+     3
+     Output: [1,3,2]
+     * @param args
+     */
     public static void main(String[] args) {
         TreeNode treeNode1 = new TreeNode(1);
         TreeNode treeNode2 = new TreeNode(2);
         TreeNode treeNode3 = new TreeNode(3);
         treeNode1.right = treeNode2;
         treeNode2.left = treeNode3;
-        List<Integer> list = new BinaryTreeInorderTraversal().inorderTraversal(treeNode1);
-        System.out.println("list=" + JsonUtil.toJson(list));
+//        List<Integer> list = new BinaryTreeInorderTraversal().inorderTraversal(treeNode1);
+//        System.out.println("list=" + JsonUtil.toJson(list));
+        List<Integer> list1 = new BinaryTreeInorderTraversal().inorderTraversalLoop(treeNode1);
+        System.out.println("list1=" + JsonUtil.toJson(list1));
     }
 
 
