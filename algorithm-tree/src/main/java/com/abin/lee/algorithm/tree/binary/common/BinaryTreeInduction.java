@@ -1,7 +1,6 @@
 package com.abin.lee.algorithm.tree.binary.common;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.Test;

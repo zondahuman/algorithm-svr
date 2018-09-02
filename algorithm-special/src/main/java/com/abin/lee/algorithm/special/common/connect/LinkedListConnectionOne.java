@@ -1,6 +1,6 @@
 package com.abin.lee.algorithm.special.common.connect;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

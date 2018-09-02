@@ -1,7 +1,6 @@
 package com.abin.lee.algorithm.chain.single.list.basic.common;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
-import org.junit.Test;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2018/4/28 18:43.

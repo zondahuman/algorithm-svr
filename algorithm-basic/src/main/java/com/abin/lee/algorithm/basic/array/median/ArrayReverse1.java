@@ -1,6 +1,6 @@
 package com.abin.lee.algorithm.basic.array.median;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2017/11/22 2017/11/22.

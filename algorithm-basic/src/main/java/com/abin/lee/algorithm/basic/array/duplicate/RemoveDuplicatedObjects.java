@@ -1,6 +1,6 @@
 package com.abin.lee.algorithm.basic.array.duplicate;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 import java.util.HashSet;
 import java.util.Iterator;

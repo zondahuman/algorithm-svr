@@ -1,7 +1,7 @@
 package com.abin.lee.algorithm.basic.array.common;
 
 import com.google.common.collect.Maps;
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 import java.util.HashMap;
 import java.util.Map;

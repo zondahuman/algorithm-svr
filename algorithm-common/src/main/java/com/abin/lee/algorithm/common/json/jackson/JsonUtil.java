@@ -1,4 +1,4 @@
-package com.qunar.des.algorithm.common.json.jackson;
+package com.abin.lee.algorithm.common.json.jackson;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;

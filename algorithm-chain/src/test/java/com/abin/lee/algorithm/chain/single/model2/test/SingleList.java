@@ -1,6 +1,6 @@
 package com.abin.lee.algorithm.chain.single.model2.test;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

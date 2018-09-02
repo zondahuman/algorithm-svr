@@ -1,6 +1,6 @@
 package com.abin.lee.algorithm.chain.single.list.basic.reverse;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2017/12/7 14:16.

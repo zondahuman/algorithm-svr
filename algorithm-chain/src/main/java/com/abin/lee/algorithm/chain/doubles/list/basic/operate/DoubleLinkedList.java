@@ -1,5 +1,6 @@
 package com.abin.lee.algorithm.chain.doubles.list.basic.operate;
 
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -9,7 +10,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * https://blog.csdn.net/lsly521/article/details/79208301
  * https://blog.csdn.net/lovoo/article/details/51771321
  * <p>
- * 这里双向链表，头结点和末节点虽然初始化了-1，-2，没有实际意义，只是为了初始化，实际它里面可以不放置任何东西，不参与运算，只是为了运算简单化
+ * 这里双向链表，头结点和末节点虽然初始化了-1，-2，没有实际意义，只是为了初始化，实际它里面可以不放置任何东西，
+ * 不参与运算，只是为了运算简单化
  */
 public class DoubleLinkedList {
     private Node head;
@@ -191,42 +193,51 @@ public class DoubleLinkedList {
      * @param args
      */
     public static void main(String[] args) {
-//        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
-//        doubleLinkedList.addHead(1);
-//        doubleLinkedList.addHead(3);
-//        doubleLinkedList.addHead(5);
-//        doubleLinkedList.addHead(7);
-//        doubleLinkedList.addHead(9);
+        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+        doubleLinkedList.addHead(1);
+        doubleLinkedList.addHead(3);
+        doubleLinkedList.addHead(5);
+        doubleLinkedList.addHead(7);
+        doubleLinkedList.addHead(9);
 //        doubleLinkedList.addTail(2);
 
-//        System.out.println("doubleLinkedList.head=" + JsonUtil.toJson(doubleLinkedList.head));
-//        System.out.println("doubleLinkedList.tail=" + JsonUtil.toJson(doubleLinkedList.tail));
-//        Node node = doubleLinkedList.getNode(1);
-//        Node node = doubleLinkedList.getNode(4);
-//        System.out.println("node=" + node.toString());
-//        Node node = doubleLinkedList.getLastNode(1);
-//        Node node = doubleLinkedList.getLastNode(4);
-//        System.out.println("node=" + node.toString());
+        System.out.println("doubleLinkedList.head=" + JsonUtil.toJson(doubleLinkedList.head));
+        System.out.println("doubleLinkedList.tail=" + JsonUtil.toJson(doubleLinkedList.tail));
 
-//        DoubleLinkedList doubleLinkedList2 = new DoubleLinkedList();
-//
-//        doubleLinkedList2.addHead(1);
-//        doubleLinkedList2.addHead(3);
-//        doubleLinkedList2.addHead(5);
-//        doubleLinkedList2.addDataByIndex(2, 77);
-//        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
-//        doubleLinkedList2.addByIndex(2, 77);
-//        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
+        Node node1 = doubleLinkedList.getNode(1);
+        System.out.println("node1=" + node1.toString());
+
+        Node node4 = doubleLinkedList.getNode(4);
+        System.out.println("node4=" + node4.toString());
+
+        Node nodeLast1 = doubleLinkedList.getLastNode(1);
+        System.out.println("nodeLast1=" + nodeLast1.toString());
+
+        Node nodeLast4 = doubleLinkedList.getLastNode(4);
+        System.out.println("nodeLast4=" + nodeLast4.toString());
+
+        DoubleLinkedList doubleLinkedList2 = new DoubleLinkedList();
+        doubleLinkedList2.addHead(11);
+        doubleLinkedList2.addHead(33);
+        doubleLinkedList2.addHead(55);
+        doubleLinkedList2.addDataByIndex(2, 777);
+        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
+        doubleLinkedList2.addByIndex(2, 888);
+        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
+
 
         DoubleLinkedList doubleLinkedList3 = new DoubleLinkedList();
-        doubleLinkedList3.addHead(1);
-        doubleLinkedList3.addHead(3);
-        doubleLinkedList3.addHead(5);
-        doubleLinkedList3.addHead(7);
-//        doubleLinkedList3.removeDataByIndex(3);
+        doubleLinkedList3.addHead(111);
+        doubleLinkedList3.addHead(333);
+        doubleLinkedList3.addHead(555);
+        doubleLinkedList3.addHead(777);
+        doubleLinkedList3.removeDataByIndex(3);
+        System.out.println("doubleLinkedList3.head=" + doubleLinkedList3.head.toString());
+
         boolean flag = doubleLinkedList3.removeByIndex(5);
         System.out.println("flag=" + flag);
         System.out.println("doubleLinkedList3.head=" + doubleLinkedList3.head.toString());
+
     }
 
 

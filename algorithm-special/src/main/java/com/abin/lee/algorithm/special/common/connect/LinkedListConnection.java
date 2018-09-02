@@ -1,13 +1,12 @@
 package com.abin.lee.algorithm.special.common.connect;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by abin on 2018/5/26 23:26.

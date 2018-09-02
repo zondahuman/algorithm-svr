@@ -1,6 +1,6 @@
 package com.qunar.des.algorithm.leetcode.common;
 
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2018/5/15 12:58.
