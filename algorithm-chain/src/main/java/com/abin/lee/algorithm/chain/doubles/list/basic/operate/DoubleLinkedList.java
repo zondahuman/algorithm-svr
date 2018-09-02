@@ -131,8 +131,8 @@ public class DoubleLinkedList {
             newNode.pre = head;
         } else {
             Node node = head;
-            //tail节点=-2，到了这里还没找到就结束，不再插入
-            while (node != null && node.val != -2) {
+            //index必须小于双链表的count长度，否则返回false
+            while (node != null && index < count) {
                 node = node.next;
                 length++;
                 if (length == index) {
@@ -173,7 +173,8 @@ public class DoubleLinkedList {
             return false;
         } else {
             Node node = head;
-            while (node != null && node.val != -2) {
+            //index必须小于双链表的count长度，否则返回false
+            while (node != null && index < count) {
                 node = node.next;
                 ++length;
                 if (length == index) {
@@ -223,7 +224,8 @@ public class DoubleLinkedList {
         doubleLinkedList3.addHead(5);
         doubleLinkedList3.addHead(7);
 //        doubleLinkedList3.removeDataByIndex(3);
-        doubleLinkedList3.removeByIndex(3);
+        boolean flag = doubleLinkedList3.removeByIndex(5);
+        System.out.println("flag=" + flag);
         System.out.println("doubleLinkedList3.head=" + doubleLinkedList3.head.toString());
     }
 
