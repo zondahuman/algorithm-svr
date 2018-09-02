@@ -66,6 +66,21 @@ public class DoubleLinkedList {
         return null;
     }
 
+    public Node getLastNode(int lastIndex){
+        if(lastIndex == 0)
+            return head.next;
+        if(lastIndex == count)
+            return tail.pre;
+        int length=0;
+        Node node = head;
+        for (int i = 0; i <count ; i++) {
+            node = node.next;
+            ++length;
+            if(length == lastIndex)
+                return node;
+        }
+        return null;
+    }
 
 
     public boolean addTail(int obj) {
