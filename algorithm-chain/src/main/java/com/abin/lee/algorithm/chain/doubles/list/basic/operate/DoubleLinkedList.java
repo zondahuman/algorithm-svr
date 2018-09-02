@@ -11,8 +11,8 @@ public class DoubleLinkedList {
     private int count;
 
     public DoubleLinkedList() {
-        head = new Node(null);
-        tail = new Node(null);
+        head = new Node(-1, null, null);
+        tail = new Node(-2, null, null);
         this.head = tail;
         count++;
     }
@@ -28,14 +28,17 @@ public class DoubleLinkedList {
      * @return
      */
     public boolean addHead(int obj) {
-        Node node = new Node(obj, null, this.head);
-        this.head.pre = node;
-        this.head = node;
-        if (tail == null)
-            tail = this.head;
+        Node node = new Node(obj);
+        this.head.next = node;
+        node.pre = head;
+
+        tail.pre = node;
+        node.next = tail;
+
         count++;
         return true;
     }
+
     public void addNode(int obj) {
         Node newNode = new Node(obj);
         if (head == null) {
@@ -53,11 +56,10 @@ public class DoubleLinkedList {
     }
 
 
-
     public static void main(String[] args) {
         DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
-//        doubleLinkedList.addHead(1);
-        doubleLinkedList.addNode(1);
+        doubleLinkedList.addHead(1);
+//        doubleLinkedList.addNode(1);
         System.out.println("doubleLinkedList.head=" + JsonUtil.toJson(doubleLinkedList.head));
         System.out.println("doubleLinkedList.tail=" + JsonUtil.toJson(doubleLinkedList.tail));
     }
