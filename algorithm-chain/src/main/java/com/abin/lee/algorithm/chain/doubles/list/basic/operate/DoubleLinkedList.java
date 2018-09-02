@@ -19,6 +19,7 @@ public class DoubleLinkedList {
     public int size() {
         return this.count;
     }
+
     public boolean empty() {
         return this.count == 0;
     }
@@ -99,16 +100,16 @@ public class DoubleLinkedList {
     }
 
     //在指定位置插入元素
-    public boolean addDataByIndex(int index, int obj){
+    public boolean addDataByIndex(int index, int obj) {
         int length = 0;
         Node node = head;
-        for (int i = 0; i <count ; i++) {
+        for (int i = 0; i < count; i++) {
             node = node.next;
             ++length;
-            if(length == index){
-                if(null != node){
+            if (length == index) {
+                if (null != node) {
                     Node inode = new Node(obj);
-                    node.next.pre = inode ;
+                    node.next.pre = inode;
                     inode.next = node.next;
                     node.next = inode;
                     inode.pre = node;
@@ -120,39 +121,69 @@ public class DoubleLinkedList {
     }
 
     //在指定位置插入元素
-    public boolean addByIndex(int index, int obj){
+    public boolean addByIndex(int index, int obj) {
         int length = 0;
         Node newNode = new Node(obj);
-        if(0 == index){
+        if (0 == index) {
             head.next.pre = newNode;
             newNode.next = head.next;
             head.next = newNode;
             newNode.pre = head;
-        }else{
+        } else {
             Node node = head;
             //tail节点=-2，到了这里还没找到就结束，不再插入
-            while(node != null && node.val != -2){
-                node = node.next ;
+            while (node != null && node.val != -2) {
+                node = node.next;
                 length++;
-                if(length == index){
-                    node.next.pre = newNode ;
+                if (length == index) {
+                    node.next.pre = newNode;
                     newNode.next = node.next;
-                    node.next = newNode ;
+                    node.next = newNode;
                     newNode.pre = node;
-                    return true ;
+                    return true;
                 }
             }
         }
         return false;
     }
 
-    public void removeDataByIndex(int index){
-
+    public boolean removeDataByIndex(int index) {
+        int length = 0;
+        if (index == 0) {
+            return false;
+        } else {
+            Node node = head;
+            for (int i = 0; i < count; i++) {
+                node = node.next;
+                ++length;
+                if (length == index) {
+                    node.pre.next = node.next;
+                    node.next.pre = node.pre;
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
-    public void removeByIndex(int index){
-
+    public boolean removeByIndex(int index) {
+        int length = 0;
+        if (index == 0) {
+            return false;
+        } else {
+            Node node = head;
+            while (node != null && node.val != -2) {
+                node = node.next;
+                ++length;
+                if (length == index) {
+                    node.pre.next = node.next;
+                    node.next.pre = node.pre;
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**
@@ -176,17 +207,24 @@ public class DoubleLinkedList {
 //        Node node = doubleLinkedList.getLastNode(4);
 //        System.out.println("node=" + node.toString());
 
-        DoubleLinkedList doubleLinkedList2 = new DoubleLinkedList();
-
-        doubleLinkedList2.addHead(1);
-        doubleLinkedList2.addHead(3);
-        doubleLinkedList2.addHead(5);
+//        DoubleLinkedList doubleLinkedList2 = new DoubleLinkedList();
+//
+//        doubleLinkedList2.addHead(1);
+//        doubleLinkedList2.addHead(3);
+//        doubleLinkedList2.addHead(5);
 //        doubleLinkedList2.addDataByIndex(2, 77);
 //        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
-        doubleLinkedList2.addByIndex(2, 77);
-        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
+//        doubleLinkedList2.addByIndex(2, 77);
+//        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
 
-
+        DoubleLinkedList doubleLinkedList3 = new DoubleLinkedList();
+        doubleLinkedList3.addHead(1);
+        doubleLinkedList3.addHead(3);
+        doubleLinkedList3.addHead(5);
+        doubleLinkedList3.addHead(7);
+//        doubleLinkedList3.removeDataByIndex(3);
+        doubleLinkedList3.removeByIndex(3);
+        System.out.println("doubleLinkedList3.head=" + doubleLinkedList3.head.toString());
     }
 
 
