@@ -36,11 +36,28 @@ public class DoubleLinkedList {
         count++;
         return true;
     }
+    public void addNode(int obj) {
+        Node newNode = new Node(obj);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+            count = 1;
+            return;
+        }
+
+        Node tailTmp = tail;
+        tailTmp.next = newNode;
+        newNode.pre = tailTmp;
+        tail = newNode;
+        count++;
+    }
+
 
 
     public static void main(String[] args) {
         DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
-        doubleLinkedList.addHead(1);
+//        doubleLinkedList.addHead(1);
+        doubleLinkedList.addNode(1);
         System.out.println("doubleLinkedList.head=" + JsonUtil.toJson(doubleLinkedList.head));
         System.out.println("doubleLinkedList.tail=" + JsonUtil.toJson(doubleLinkedList.tail));
     }
