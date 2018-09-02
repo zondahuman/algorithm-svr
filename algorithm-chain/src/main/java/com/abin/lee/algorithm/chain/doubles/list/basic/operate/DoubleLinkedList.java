@@ -1,7 +1,5 @@
 package com.abin.lee.algorithm.chain.doubles.list.basic.operate;
 
-import com.google.common.base.MoreObjects;
-import com.qunar.des.algorithm.common.json.jackson.JsonUtil;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -9,7 +7,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * 双向链表操作
  * https://www.cnblogs.com/snowwang/p/6074577.html
  * https://blog.csdn.net/lsly521/article/details/79208301
- *
+ * https://blog.csdn.net/lovoo/article/details/51771321
+ * <p>
  * 这里双向链表，头结点和末节点虽然初始化了-1，-2，没有实际意义，只是为了初始化，实际它里面可以不放置任何东西，不参与运算，只是为了运算简单化
  */
 public class DoubleLinkedList {
@@ -20,6 +19,9 @@ public class DoubleLinkedList {
     public int size() {
         return this.count;
     }
+    public boolean empty() {
+        return this.count == 0;
+    }
 
     /**
      * 要对链表进行判断，如果为空则设置尾节点为新添加的节点，如果不为空，还要设置头节点的一个前节点为新节点
@@ -29,16 +31,16 @@ public class DoubleLinkedList {
      */
     public boolean addHead(int obj) {
         Node node = new Node(obj);
-        if(null == head){
+        if (null == head) {
             head = new Node(-1, null, null);
             this.head.next = node;
             node.pre = head;
-            if(null == tail){
+            if (null == tail) {
                 tail = new Node(-2, null, null);
             }
             tail.pre = node;
             node.next = tail;
-        }else{
+        } else {
             this.head.next.pre = node;
             node.next = head.next;
 
@@ -50,33 +52,33 @@ public class DoubleLinkedList {
         return true;
     }
 
-    public Node getNode(int index){
-        if(index == 0)
+    public Node getNode(int index) {
+        if (index == 0)
             return head.next;
-        if(index == count)
+        if (index == count)
             return tail.pre;
-        int length=0;
+        int length = 0;
         Node node = head;
-        for (int i = 0; i <count ; i++) {
+        for (int i = 0; i < count; i++) {
             node = node.next;
             ++length;
-            if(length == index)
+            if (length == index)
                 return node;
         }
         return null;
     }
 
-    public Node getLastNode(int lastIndex){
-        if(lastIndex == 0)
-            return head.next;
-        if(lastIndex == count)
+    public Node getLastNode(int lastIndex) {
+        if (lastIndex == 0)
             return tail.pre;
-        int length=0;
-        Node node = head;
-        for (int i = 0; i <count ; i++) {
-            node = node.next;
+        if (lastIndex == count)
+            return head.next;
+        int length = 0;
+        Node node = tail;
+        for (int i = 0; i < count; i++) {
+            node = node.pre;
             ++length;
-            if(length == lastIndex)
+            if (length == lastIndex)
                 return node;
         }
         return null;
@@ -86,35 +88,103 @@ public class DoubleLinkedList {
     public boolean addTail(int obj) {
         Node node = new Node(obj);
 
-        tail.pre.next  = node ;
+        tail.pre.next = node;
         node.pre = tail.pre;
 
         node.next = tail;
-        tail.pre  = node;
+        tail.pre = node;
 
         count++;
         return true;
     }
 
+    //在指定位置插入元素
+    public boolean addDataByIndex(int index, int obj){
+        int length = 0;
+        Node node = head;
+        for (int i = 0; i <count ; i++) {
+            node = node.next;
+            ++length;
+            if(length == index){
+                if(null != node){
+                    Node inode = new Node(obj);
+                    node.next.pre = inode ;
+                    inode.next = node.next;
+                    node.next = inode;
+                    inode.pre = node;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //在指定位置插入元素
+    public boolean addByIndex(int index, int obj){
+        int length = 0;
+        Node newNode = new Node(obj);
+        if(0 == index){
+            head.next.pre = newNode;
+            newNode.next = head.next;
+            head.next = newNode;
+            newNode.pre = head;
+        }else{
+            Node node = head;
+            //tail节点=-2，到了这里还没找到就结束，不再插入
+            while(node != null && node.val != -2){
+                node = node.next ;
+                length++;
+                if(length == index){
+                    node.next.pre = newNode ;
+                    newNode.next = node.next;
+                    node.next = newNode ;
+                    newNode.pre = node;
+                    return true ;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void removeDataByIndex(int index){
+
+    }
+
+
+    public void removeByIndex(int index){
+
+    }
 
     /**
-     *
      * @param args
      */
     public static void main(String[] args) {
-        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
-        doubleLinkedList.addHead(1);
-        doubleLinkedList.addHead(3);
-        doubleLinkedList.addHead(5);
-        doubleLinkedList.addHead(7);
-        doubleLinkedList.addHead(9);
+//        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+//        doubleLinkedList.addHead(1);
+//        doubleLinkedList.addHead(3);
+//        doubleLinkedList.addHead(5);
+//        doubleLinkedList.addHead(7);
+//        doubleLinkedList.addHead(9);
 //        doubleLinkedList.addTail(2);
 
 //        System.out.println("doubleLinkedList.head=" + JsonUtil.toJson(doubleLinkedList.head));
 //        System.out.println("doubleLinkedList.tail=" + JsonUtil.toJson(doubleLinkedList.tail));
-        Node node = doubleLinkedList.getNode(1);
+//        Node node = doubleLinkedList.getNode(1);
 //        Node node = doubleLinkedList.getNode(4);
-        System.out.println("node=" + node.toString());
+//        System.out.println("node=" + node.toString());
+//        Node node = doubleLinkedList.getLastNode(1);
+//        Node node = doubleLinkedList.getLastNode(4);
+//        System.out.println("node=" + node.toString());
+
+        DoubleLinkedList doubleLinkedList2 = new DoubleLinkedList();
+
+        doubleLinkedList2.addHead(1);
+        doubleLinkedList2.addHead(3);
+        doubleLinkedList2.addHead(5);
+//        doubleLinkedList2.addDataByIndex(2, 77);
+//        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
+        doubleLinkedList2.addByIndex(2, 77);
+        System.out.println("doubleLinkedList2.head=" + doubleLinkedList2.head.toString());
 
 
     }
