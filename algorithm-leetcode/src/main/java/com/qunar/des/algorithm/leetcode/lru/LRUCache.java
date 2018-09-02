@@ -30,9 +30,9 @@ public class LRUCache {
     }
 
     public int get(int key) {
-        if(map.get(key) != null){
-            Node node = map.get(key) ;
-            int result = node.value ;
+        if (map.get(key) != null) {
+            Node node = map.get(key);
+            int result = node.value;
             remove(node);
             addHead(node);
             return result;
@@ -46,13 +46,13 @@ public class LRUCache {
             node.value = value;
             remove(node);
             addHead(node);
-        }else{
+        } else {
             Node node = new Node(key, value);
             map.put(key, node);
-            if(count<maxSize){
+            if (count < maxSize) {
                 count++;
                 addHead(node);
-            }else{
+            } else {
                 map.remove(tail.pre.key);
                 remove(tail.pre);
                 addHead(node);
@@ -60,12 +60,12 @@ public class LRUCache {
         }
     }
 
-    public void remove(Node node){
+    public void remove(Node node) {
         node.pre.next = node.next;
         node.next.pre = node.pre;
     }
 
-    public void addHead(Node node){
+    public void addHead(Node node) {
         node.next = head.next;
         head.next.pre = node;
         head.next = node;
@@ -79,12 +79,17 @@ public class LRUCache {
         lru.put(1, 11);
         lru.put(2, 22);
         lru.put(3, 33);
+        System.out.println("lru.map=" + lru.map);
+        lru.get(1);
+        lru.get(3);
+        lru.get(2);
+        System.out.println("lru.map=" + lru.map);
         lru.put(4, 44);
+        lru.get(4);
         System.out.println("lru.map=" + lru.map);
 
 
     }
-
 
 
     public static class Node {
