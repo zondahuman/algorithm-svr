@@ -147,7 +147,7 @@ public class DoubleLinkedList {
     }
 
     public void removeDataByIndex(int index){
-        
+
     }
 
 
