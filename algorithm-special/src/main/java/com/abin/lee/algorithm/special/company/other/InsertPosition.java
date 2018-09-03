@@ -2,6 +2,7 @@ package com.abin.lee.algorithm.special.company.other;
 
 /**
  * Created by abin on 2018/9/3.
+ * MT
  */
 public class InsertPosition {
     public int getNum(String str) {
