@@ -8,15 +8,14 @@ public class InsertPosition {
         int count = 0;
         boolean flag = false;
         for (int i = 0; i < str.length(); i++) {
-            if (flag == true && (i + 2) < str.length() && str.charAt(i + 2) == '0' && str.charAt(i + 1) == '0') {
-                count++;
-            }
             if (str.charAt(i) == '1') {
                 flag = false;
             } else if (str.charAt(i) == '0') {
                 flag = true;
             }
-
+            if (flag == true && (i + 2) < str.length() && str.charAt(i + 2) == '0' && str.charAt(i + 1) == '0') {
+                count++;
+            }
         }
         return count;
     }
