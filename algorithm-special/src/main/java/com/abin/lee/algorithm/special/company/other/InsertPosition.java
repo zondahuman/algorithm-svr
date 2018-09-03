@@ -1,8 +1,5 @@
 package com.abin.lee.algorithm.special.company.other;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by abin on 2018/9/3.
  */
@@ -26,6 +23,7 @@ public class InsertPosition {
 
     /**
      * 10001001, 在里面为0的地方插入1，保证不会出现11,1和1挨着的情况
+     *
      * @param args
      */
     public static void main(String[] args) {
