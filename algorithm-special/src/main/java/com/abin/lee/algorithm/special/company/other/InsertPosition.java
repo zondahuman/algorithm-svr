@@ -11,7 +11,7 @@ public class InsertPosition {
         int count = 0;
         boolean flag = false;
         for (int i = 0; i < str.length(); i++) {
-            if (flag == true && (i + 2) < str.length() && str.charAt(i + 2) == '0') {
+            if (flag == true && (i + 2) < str.length() && str.charAt(i + 2) == '0' && str.charAt(i + 1) == '0') {
                 count++;
             }
             if (str.charAt(i) == '1') {
@@ -29,7 +29,8 @@ public class InsertPosition {
      * @param args
      */
     public static void main(String[] args) {
-        String str = "1000101";
+//        String str = "1000101";
+        String str = "000101001";
         int count = new InsertPosition().getNum(str);
         System.out.println("count=" + count);
     }
