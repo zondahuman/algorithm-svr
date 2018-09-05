@@ -29,10 +29,7 @@ public class TheMaze {
         int[] destination = new int[]{3, 2};
         boolean flag = new TheMaze().hasPath(maze1, start, destination);
         System.out.println("flag=" + flag);
-
     }
-
-
     public boolean hasPath(int[][] maze, int[] start, int[] destination) {
         int m = maze.length; //行数
         int n = maze[0].length; //列数
