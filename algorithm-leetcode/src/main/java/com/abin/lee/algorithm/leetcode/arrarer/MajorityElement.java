@@ -53,13 +53,13 @@ public class MajorityElement {
         return nums[nums.length / 2];
     }
 
-    public int majorityElement3(int[] num) {
-        int major = num[0], count = 1;
-        for (int i = 1; i < num.length; i++) {
+    public int majorityElement3(int[] nums) {
+        int major = nums[0], count = 1;
+        for (int i = 1; i < nums.length; i++) {
             if (count == 0) {
                 count++;
-                major = num[i];
-            } else if (major == num[i]) {
+                major = nums[i];
+            } else if (major == nums[i]) {
                 count++;
             } else count--;
 
@@ -68,7 +68,8 @@ public class MajorityElement {
     }
 
     public static void main(String[] args) {
-        int[] input = {1, 1, 2, 2, 4, 4, 4, 4, 5, 5, 6, 6};
+//        int[] input = {1, 1, 2, 2, 4, 4, 4, 4, 5, 5, 6, 6};
+        int[] input = {1, 1, 2, 2, 1, 5, 5, 6, 6};
         int result1 = new MajorityElement().majorityElement3(input);
         System.out.println("result1=" + result1);
 
