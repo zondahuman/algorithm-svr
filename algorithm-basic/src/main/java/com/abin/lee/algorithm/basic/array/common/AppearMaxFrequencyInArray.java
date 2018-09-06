@@ -12,15 +12,14 @@ import java.util.Map;
  */
 public class AppearMaxFrequencyInArray {
 
-
     public static void main(String[] args) {
-        int[] input = {11, 11, 2, 2, 4, 5, 4, 2,2,2};
+//        int[] input = {11, 11, 2, 2, 4, 5, 4, 2,2,2};
+        int[] input ={1,1,2,2,4,4,4,4,5,5,6,6};
         int result1 = maxFrequence(input);
         System.out.println("result1=" + result1);
-//        int result2 = majorityElement(input);
-//        System.out.println("result2=" + result2);
+        int result2 = getMax(input);
+        System.out.println("result2=" + result2);
     }
-
 
     public static Integer maxFrequence(int[] input) {
         int num = 0;
@@ -46,9 +45,20 @@ public class AppearMaxFrequencyInArray {
     }
 
     public static int getMax(int[] input) {
-
-
-        return 0;
+        int curNum = 0;
+        int curMax = 0;
+        int max = 0;
+        for (int i = 0; i <input.length-1 ; i++) {
+            curNum = input[i];
+            if(input[i+1] == curNum){
+                ++curMax;
+            }else{
+                curMax = 1;
+            }
+            if(curMax>max)
+                max = curMax;
+        }
+        return curNum;
     }
 
 
