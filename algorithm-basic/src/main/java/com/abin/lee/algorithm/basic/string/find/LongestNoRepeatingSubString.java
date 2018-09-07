@@ -1,9 +1,6 @@
 package com.abin.lee.algorithm.basic.string.find;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by abin on 2018/4/27 23:38.
@@ -26,8 +23,10 @@ public class LongestNoRepeatingSubString {
 //        String str3 = "ababcabcde";
         String str3 = "pwwkew";
 //        Integer result = getMaxNoDuplicateSubString(str3);
-        Integer result = longestSubSet(str3);
-        System.out.println("result=" + result);
+//        Integer result = longestSubSet(str3);
+//        System.out.println("result=" + result);
+        String result1 = longestSubSetString1(str3);
+        System.out.println("result1=" + result1);
     }
 
     /**
@@ -74,6 +73,42 @@ public class LongestNoRepeatingSubString {
         }
         System.out.println("set="+set);
         return ans;
+    }
+    public static String longestSubSetString1(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int ans = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            // try to extend the range [i, j]
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                ans = Math.max(ans, j - i);
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        System.out.println("set="+set);
+        return set.toString();
+    }
+    public static List<String> longestSubSetString(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int ans = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            // try to extend the range [i, j]
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                ans = Math.max(ans, j - i);
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        System.out.println("set="+set);
+        List<String> list= new ArrayList<>();
+        for (int k = i; k <j ; k++) {
+            list.add(s.charAt(k)+"");
+        }
+        return list;
     }
 
 
