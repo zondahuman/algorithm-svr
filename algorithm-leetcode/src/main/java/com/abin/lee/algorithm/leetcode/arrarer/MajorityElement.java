@@ -7,7 +7,8 @@ import java.util.Map;
 /**
  * Created by abin on 2018/9/6.
  * 169. Majority Element
- * 数组中出现次数最多的元素
+ * 数组中出现次数超过一半的元素
+ * Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times
  * https://blog.csdn.net/dashenxueba/article/details/78708147
  * https://leetcode.com/problems/majority-element/description/
  * https://leetcode.com/problems/majority-element/solution/

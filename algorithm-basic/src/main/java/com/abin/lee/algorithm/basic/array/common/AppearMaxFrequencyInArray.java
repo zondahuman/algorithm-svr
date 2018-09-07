@@ -9,6 +9,7 @@ import java.util.Map;
  * Created by abin on 2018/7/8.
  * 整形数组求出现次数最多的数字
  * https://blog.csdn.net/legend050709/article/details/26580249
+ * https://www.jianshu.com/p/ac6c2b5d09dd
  */
 public class AppearMaxFrequencyInArray {
 
