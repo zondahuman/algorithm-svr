@@ -2,6 +2,7 @@ package com.abin.lee.algorithm.basic.array.common;
 
 import com.google.common.collect.Maps;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -20,6 +21,8 @@ public class AppearMaxFrequencyInArray {
         System.out.println("result1=" + result1);
         int result2 = getMax(input);
         System.out.println("result2=" + result2);
+        int result3 = findMostInArray(input);
+        System.out.println("result3=" + result3);
     }
 
     public static Integer maxFrequence(int[] input) {
@@ -61,6 +64,36 @@ public class AppearMaxFrequencyInArray {
         }
         return curNum;
     }
+
+    public static  int findMostInArray(int[] arr){
+
+        int maxNum = 0;
+        int element=0;
+        Map<Integer,Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < arr.length; i++) {
+            if (map.containsKey(arr[i])){
+                map.put(arr[i],map.get(arr[i])+1);
+            }else {
+                map.put(arr[i],1);
+            }
+
+            if (element == arr[i]){
+                maxNum++;
+            }
+            if (map.get(arr[i])>maxNum){
+                maxNum = map.get(arr[i]);
+                element = arr[i];
+            }
+
+
+        }
+        System.out.println("重复次数:"+maxNum);
+        return  element;
+
+
+
+    }
+
 
 
 
