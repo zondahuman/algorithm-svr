@@ -17,10 +17,10 @@ public class AppearMaxFrequencyInArray {
     public static void main(String[] args) {
 //        int[] input = {11, 11, 2, 2, 4, 5, 4, 2,2,2};
         int[] input ={1,1,2,2,4,4,4,4,5,5,6,6};
-        int result1 = maxFrequence(input);
-        System.out.println("result1=" + result1);
-        int result2 = getMax(input);
-        System.out.println("result2=" + result2);
+//        int result1 = maxFrequence(input);
+//        System.out.println("result1=" + result1);
+//        int result2 = getMax(input);
+//        System.out.println("result2=" + result2);
         int result3 = findMostInArray(input);
         System.out.println("result3=" + result3);
     }
@@ -77,15 +77,13 @@ public class AppearMaxFrequencyInArray {
                 map.put(arr[i],1);
             }
 
-            if (element == arr[i]){
-                maxNum++;
-            }
+//            if (element == arr[i]){
+//                maxNum++;
+//            }
             if (map.get(arr[i])>maxNum){
                 maxNum = map.get(arr[i]);
                 element = arr[i];
             }
-
-
         }
         System.out.println("重复次数:"+maxNum);
         return  element;
