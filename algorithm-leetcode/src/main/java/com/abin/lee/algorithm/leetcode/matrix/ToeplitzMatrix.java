@@ -4,7 +4,7 @@ import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
 /**
  * Created by abin on 2018/9/10.
- * 766. Toeplitz Matrix 托普利茨矩阵
+ * 766. Toeplitz Matrix 托普利茨矩阵，
  * 每一条对角线元素的比较
  * https://leetcode.com/problems/toeplitz-matrix/description/
  */
