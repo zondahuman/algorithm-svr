@@ -31,20 +31,20 @@ public class ReshapeTheMatrix {
     }
 
     public int[][] matrixReshape2(int[][] nums, int r, int c) {
-        if(nums == null || nums.length==0 || nums[0].length==0)
+        if (nums == null || nums.length == 0 || nums[0].length == 0)
             return new int[][]{};
-        if(r*c > nums.length*nums[0].length) return nums;
+        if (r * c > nums.length * nums[0].length) return nums;
         int row = nums.length;
         int column = nums[0].length;
         Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i <row ; i++) {
-            for (int j = 0; j <column ; j++) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
                 queue.offer(nums[i][j]);
             }
         }
         int[][] result = new int[r][c];
-        for (int i = 0; i <r ; i++) {
-            for (int j = 0; j <c ; j++) {
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
                 result[i][j] = queue.poll();
             }
         }
@@ -53,6 +53,7 @@ public class ReshapeTheMatrix {
 
     /**
      * 这个官方的解答有错误，请注意************************
+     *
      * @param nums
      * @param r
      * @param c
@@ -62,7 +63,7 @@ public class ReshapeTheMatrix {
         int[][] res = new int[r][c];
         if (nums.length == 0 || r * c != nums.length * nums[0].length)
             return nums;
-        Queue < Integer > queue = new LinkedList < > ();
+        Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums[0].length; j++) {
                 queue.add(nums[i][j]);
@@ -71,6 +72,25 @@ public class ReshapeTheMatrix {
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
                 res[i][j] = queue.remove();
+            }
+        }
+        return res;
+    }
+
+    public int[][] matrixReshape4(int[][] nums, int r, int c) {
+        int[][] res = new int[r][c];
+        if (nums.length == 0 || r * c != nums.length * nums[0].length)
+            return nums;
+        int row = 0;
+        int column = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[0].length; j++) {
+                res[row][column] = nums[i][j];
+                column++;
+                if (column == c) {
+                    row++;
+                    column = 0;
+                }
             }
         }
         return res;
@@ -103,11 +123,11 @@ public class ReshapeTheMatrix {
 
 
     @Test
-    public void test(){
-        System.out.println(0/2);
-        System.out.println(1/2);
-        System.out.println(2/2);
-        System.out.println(3/2);
+    public void test() {
+        System.out.println(0 / 2);
+        System.out.println(1 / 2);
+        System.out.println(2 / 2);
+        System.out.println(3 / 2);
     }
 
 }
