@@ -1,6 +1,10 @@
 package com.abin.lee.algorithm.leetcode.matrix;
 
 import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
+import org.junit.Test;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created by abin on 2018/9/10.
@@ -12,19 +16,64 @@ import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 public class ReshapeTheMatrix {
 
     public int[][] matrixReshape(int[][] nums, int r, int c) {
-        if(nums[0].length == 0) return new int[][]{};
         int row = nums.length;
         int column = nums[0].length;
         int[][] result = new int[r][c];
         //2*2 = 1*4
         if (row * column == r * c) {
             for (int i = 0; i < r * c; i++) {
-                result[i / c][i % c] = nums[i / column][i / column];
+                result[i / c][i % c] = nums[i / column][i % column];
             }
+            return result;
         } else {
             return nums;
         }
+    }
+
+    public int[][] matrixReshape2(int[][] nums, int r, int c) {
+        if(nums == null || nums.length==0 || nums[0].length==0)
+            return new int[][]{};
+        if(r*c > nums.length*nums[0].length) return nums;
+        int row = nums.length;
+        int column = nums[0].length;
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i <row ; i++) {
+            for (int j = 0; j <column ; j++) {
+                queue.offer(nums[i][j]);
+            }
+        }
+        int[][] result = new int[r][c];
+        for (int i = 0; i <r ; i++) {
+            for (int j = 0; j <c ; j++) {
+                result[i][j] = queue.poll();
+            }
+        }
         return result;
+    }
+
+    /**
+     * 这个官方的解答有错误，请注意************************
+     * @param nums
+     * @param r
+     * @param c
+     * @return
+     */
+    public int[][] matrixReshape3(int[][] nums, int r, int c) {
+        int[][] res = new int[r][c];
+        if (nums.length == 0 || r * c != nums.length * nums[0].length)
+            return nums;
+        Queue < Integer > queue = new LinkedList < > ();
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[0].length; j++) {
+                queue.add(nums[i][j]);
+            }
+        }
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                res[i][j] = queue.remove();
+            }
+        }
+        return res;
     }
 
     /**
@@ -47,10 +96,18 @@ public class ReshapeTheMatrix {
 //                {1, 0},
 //                {1, 1},
 //        };
-//        int[][] result = new ReshapeTheMatrix().matrixReshape(params);
-        int[][] result = new ReshapeTheMatrix().matrixReshape(params, 1, 3);
+//        int[][] result = new ReshapeTheMatrix().matrixReshape(params, 1, 4);
+        int[][] result = new ReshapeTheMatrix().matrixReshape2(params, 1, 4);
         System.out.println("result=" + JsonUtil.toJson(result));
     }
 
+
+    @Test
+    public void test(){
+        System.out.println(0/2);
+        System.out.println(1/2);
+        System.out.println(2/2);
+        System.out.println(3/2);
+    }
 
 }
