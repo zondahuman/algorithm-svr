@@ -24,7 +24,7 @@ public class ImageSmoother {
                         count++;
                     }
                 }
-                result[i][j] = sum / count;
+                result[i][j] = (int) Math.floor(sum / count);
             }
         }
         return result;
