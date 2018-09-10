@@ -12,6 +12,7 @@ import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 public class ReshapeTheMatrix {
 
     public int[][] matrixReshape(int[][] nums, int r, int c) {
+        if(nums[0].length == 0) return new int[][]{};
         int row = nums.length;
         int column = nums[0].length;
         int[][] result = new int[r][c];
