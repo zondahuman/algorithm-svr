@@ -5,6 +5,7 @@ import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 /**
  * Created by abin on 2018/9/10.
  * 867. Transpose Matrix
+ * 转置矩阵
  * https://leetcode.com/problems/transpose-matrix/description/
  */
 public class TransposeMatrix {
