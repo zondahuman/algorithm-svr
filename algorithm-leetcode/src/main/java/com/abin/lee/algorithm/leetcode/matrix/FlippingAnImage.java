@@ -31,6 +31,23 @@ public class FlippingAnImage {
         return result;
     }
 
+    public int[][] flipAndInvertImage2(int[][] A) {
+        int row = A.length;
+        int column = A[0].length;
+        int[][] result = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            for (int j = column - 1; j >= 0; j--) {
+                result[i][column - 1 - j] = A[i][j];
+                if (result[i][column - 1 - j] == 0) {
+                    result[i][column - 1 - j] = 1;
+                }else if(result[i][column - 1 - j] == 1) {
+                    result[i][column - 1 - j] = 0;
+                }
+            }
+        }
+        return result;
+    }
+
     /**
      * Example 1:
      * <p>
@@ -57,7 +74,8 @@ public class FlippingAnImage {
 //                {1, 0},
 //                {1, 1},
 //        };
-        int[][] result = new FlippingAnImage().flipAndInvertImage(params);
+//        int[][] result = new FlippingAnImage().flipAndInvertImage(params);
+        int[][] result = new FlippingAnImage().flipAndInvertImage2(params);
         System.out.println("result=" + JsonUtil.toJson(result));
     }
 
