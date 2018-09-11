@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.basic.array.common;
+package com.abin.lee.algorithm.leetcode.arrarer;
 
 /**
  * Created by abin on 2018/9/11.
