@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.leetcode.matrix.test;
+package com.abin.lee.algorithm.leetcode.test.matrix;
 
 import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 

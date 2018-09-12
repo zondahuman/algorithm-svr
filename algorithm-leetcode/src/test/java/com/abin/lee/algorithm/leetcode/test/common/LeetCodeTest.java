@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.leetcode.test;
+package com.abin.lee.algorithm.leetcode.test.common;
 
 /**
  * Created by abin on 2018/7/18.
@@ -8,7 +8,6 @@ public class LeetCodeTest {
         int param = 1 << 30;
         System.out.println("param="+param);
     }
-
 
     public String replaceSpace(StringBuffer str) {
         if(str ==null || str.equals(""))
@@ -23,7 +22,5 @@ public class LeetCodeTest {
         }
         return res.toString();
     }
-
-
 
 }
