@@ -37,9 +37,19 @@ public class SymmetricTree {
         Stack<TreeNode> twoStack = new Stack<>();
         TreeNode oneCur = root1, twoCur = root2;
         while(oneCur != null && twoCur != null || (!oneStack.isEmpty() && !twoStack.isEmpty())){
-
+            while(oneCur != null || twoCur !=null){
+                if(oneCur == null || twoCur == null || oneCur.val != twoCur.val)
+                    return false;
+                oneStack.push(oneCur);
+                oneCur = oneCur.left;
+                twoStack.push(twoCur);
+                twoCur = twoCur.right;
+            }
+            oneCur = oneStack.pop();
+            oneCur = oneCur.right;
+            twoCur = twoStack.pop();
+            twoCur = twoCur.left;
         }
-
         return true;
     }
 
@@ -70,8 +80,8 @@ public class SymmetricTree {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
         System.out.println("root=" + JsonUtil.toJson(root));
-        boolean min = new SymmetricTree().isSymmetric(root);
 //        boolean min = new SymmetricTree().isSymmetric(root);
+        boolean min = new SymmetricTree().isSymmetric2(root);
         System.out.println("min=" + JsonUtil.toJson(min));
     }
 
