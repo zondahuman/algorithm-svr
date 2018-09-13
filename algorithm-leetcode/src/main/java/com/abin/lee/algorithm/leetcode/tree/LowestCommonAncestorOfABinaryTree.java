@@ -3,6 +3,7 @@ package com.abin.lee.algorithm.leetcode.tree;
 /**
  * Created by abin on 2018/9/2.
  * 236. Lowest Common Ancestor of a Binary Tree
+ * 二叉树的最小共同父节点
  * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
  */
 public class LowestCommonAncestorOfABinaryTree {
