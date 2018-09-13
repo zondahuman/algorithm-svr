@@ -20,8 +20,13 @@ public class LFUCache extends HashMap<Integer, Integer> {
     }
 
     public int get(int key) {
-        
-        return 0 ;
+        Integer value = super.get(key);
+        if(value != null){
+            HitRate hitRate = keyMap.get(key);
+            hitRate.hit+=1;
+            hitRate.time = System.currentTimeMillis();
+        }
+        return value ;
     }
 
     public void put(int key, int value) {
