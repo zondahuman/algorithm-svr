@@ -31,6 +31,8 @@ public class PathSumII {
         pathSum(root.left, sum, res, list);
         pathSum(root.right, sum, res, list);
         list.remove(list.size() - 1);
+
+
     }
 
     /**
@@ -57,15 +59,43 @@ public class PathSumII {
     }
 
 
-public static class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
+    public static class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
 
-    public TreeNode(int val) {
-        this.val = val;
+        public TreeNode(int val) {
+            this.val = val;
+
+        }
+    }
+
+
+
+    public List<List<Integer>> pathSum2(TreeNode root, int sum) {
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        pathSum2(root, sum, res, list);
+        return res;
+    }
+
+    public void pathSum2(TreeNode root, int sum, List<List<Integer>> res, List<Integer> list) {
+        if (root == null)
+            return;
+        list.add(root.val);
+        sum -= root.val;
+        if (root.left == null && root.right == null && sum == 0) {
+            res.add(new ArrayList<>(list));
+        }
+        pathSum2(root.left, sum, res, list);
+        pathSum2(root.right, sum, res, list);
+        System.out.println();
+        System.out.println("before sum= " + sum + " , list=" + JsonUtil.toJson(list));
+        list.remove(list.size() - 1);
+        System.out.println("after sum= " + sum + " , list=" + JsonUtil.toJson(list));
+        System.out.println();
+
 
     }
-}
 
 }
