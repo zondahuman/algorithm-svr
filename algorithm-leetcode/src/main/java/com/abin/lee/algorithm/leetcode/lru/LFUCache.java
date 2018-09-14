@@ -56,8 +56,10 @@ public class LFUCache extends HashMap<Integer, Integer> {
             this.time = time ;
         }
         public int compareTo(HitRate o){
-            int res = hit.compareTo(o.hit);
-            return res !=0 ? res : time.compareTo(o.time);
+//            int res = hit.compareTo(o.hit);
+//            return res !=0 ? res : time.compareTo(o.time);
+            int res = o.hit.compareTo(hit);
+            return res !=0 ? res : o.time.compareTo(time);
         }
     }
 

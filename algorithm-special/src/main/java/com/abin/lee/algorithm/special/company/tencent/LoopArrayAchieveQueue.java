@@ -35,6 +35,14 @@ public class LoopArrayAchieveQueue {
         return obj;
     }
 
+    /**
+     * 几个重点：
+     1、front指向队头，rear指向队尾的下一个位置。
+     2、队为空的判断：front==rear；队为满的判断：(rear+1)%MAXSIZE==front。
+     front:起始位置
+     rear：结束位置
+     * @param args
+     */
     public static void main(String[] args) {
         LoopArrayAchieveQueue loopQueue = new LoopArrayAchieveQueue(4);
         System.out.println(loopQueue.enqueue("张三"));
