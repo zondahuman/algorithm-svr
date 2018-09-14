@@ -12,6 +12,9 @@ import java.util.Stack;
  * Created by abin on 2018/9/13.
  * 113. Path Sum II
  * https://leetcode.com/problems/path-sum-ii/description/
+ * 本题是先序遍历的递归：肯定是先考察当前结点，然后递归左子树，再递归右子树。
+
+
  */
 public class PathSumII {
     List<List<Integer>> list = new ArrayList<>();
@@ -33,6 +36,31 @@ public class PathSumII {
         if (root.right != null)
             pathSum(root.right, sum - root.val, stack);
         stack.pop();
+    }
+
+
+    public List<List<Integer>> pathSum2(TreeNode root, int sum) {
+        List<List<Integer>> res = new ArrayList<>();
+        if(root == null)
+            return res;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            TreeNode node = stack.pop();
+            if(node != null) {
+                if (node.left == null && node.right == null && node.val == sum)
+                    res.add(new ArrayList<>(node.val));
+                if (node.left != null) {
+                    node.left.val = node.val + node.left.val;
+                    stack.push(node.left);
+                }
+                if (node.right != null) {
+                    node.right.val = node.val + node.right.val;
+                    stack.push(node.right);
+                }
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) {
