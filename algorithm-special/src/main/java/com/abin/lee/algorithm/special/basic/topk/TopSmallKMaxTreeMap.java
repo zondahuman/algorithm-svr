@@ -10,7 +10,7 @@ import java.util.TreeSet;
  */
 
 public class TopSmallKMaxTreeMap {
-    public static int[] toplargeK(int param[], int k) {
+    public static int[] topSmallK(int param[], int k) {
         TreeSet<Integer> topSet = new TreeSet<>(new Comparator<Integer>(){
             public int compare(Integer o1, Integer o2){
                 return o2.compareTo(o1);
@@ -20,7 +20,7 @@ public class TopSmallKMaxTreeMap {
             if (topSet.size() < k) {
                 topSet.add(param[i]);
             } else {
-                if (topSet.first() < param[i]) {
+                if (topSet.first() > param[i]) {
                     topSet.pollFirst();
                     topSet.add(param[i]);
                 }
@@ -36,7 +36,7 @@ public class TopSmallKMaxTreeMap {
     public static void main(String[] args) {
         int[] input = new int[]{5, 1, 3, 6, 2, 4};
         int[] param = new int[3];
-        int[] result = new TopSmallKMaxTreeMap().toplargeK(input, 3);
+        int[] result = new TopSmallKMaxTreeMap().topSmallK(input, 3);
         System.out.println("input=" + JsonUtil.toJson(input));
         System.out.println("result=" + JsonUtil.toJson(result));
     }
