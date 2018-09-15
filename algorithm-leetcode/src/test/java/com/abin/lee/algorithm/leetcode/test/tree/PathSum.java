@@ -21,15 +21,15 @@ public class PathSum {
         if (root == null) return false;
         if (root.left == null && root.right == null && sum == root.val)
             return true;
-        return hasPathSum2(root.left, sum-root.val) || hasPathSum2(root.right, sum-root.val);
+        return hasPathSum2(root.left, sum - root.val) || hasPathSum2(root.right, sum - root.val);
     }
 
     public boolean hasPathSum3(TreeNode root, int sum) {
-        if (sum == 0) return true;
         if (root == null) return false;
-        if (root.left == null && root.right == null && sum == 0)
+        if (root.left == null && root.right == null && sum == root.val)
             return true;
-        return hasPathSum3(root.left, sum-root.val) || hasPathSum3(root.right, sum-root.val);
+        sum -= root.val;
+        return hasPathSum3(root.left, sum) || hasPathSum3(root.right, sum);
     }
 
     /**
