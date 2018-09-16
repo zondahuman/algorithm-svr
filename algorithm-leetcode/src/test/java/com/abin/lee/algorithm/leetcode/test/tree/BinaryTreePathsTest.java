@@ -38,16 +38,17 @@ public class BinaryTreePathsTest {
 
     public List<String> binaryTreePaths2(TreeNode root) {
         List<String> list = new ArrayList<>();
-        binaryTreePathsTravser(root, list);
+        if(root != null)
+            binaryTreePathsTravser(root, "", list);
         return list;
     }
 
-    public void binaryTreePathsTravser(TreeNode root, List<String> list) {
+    public void binaryTreePathsTravser(TreeNode root, String path, List<String> list) {
         if (root == null) return;
-        if (root.left == null && root.right != null)
-            list.add(root.val + "");
-        binaryTreePathsTravser(root.left, list);
-        binaryTreePathsTravser(root.right, list);
+        if (root.left == null && root.right == null)
+            list.add(path + root.val);
+        binaryTreePathsTravser(root.left, path + root.val + "->", list);
+        binaryTreePathsTravser(root.right, path+ root.val + "->" , list);
     }
 
     /**
