@@ -9,7 +9,7 @@ import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
  */
 public class TopKArray {
 
-    private final int MAXSIZE = 2 + 1;
+    private final int MAXSIZE = 2;
     private int currentSize = 1;
 
     private void heap_insert(int[] array, int value) {
@@ -47,9 +47,15 @@ public class TopKArray {
 
     public static void main(String[] args) {
         int[] input = new int[]{5, 1, 3, 6, 2, 4};
-        new TopKArray().heap_insert(input, 3);
+        int[] heap = new int[2];
+        for (int i = 0; i <2 ; i++) {
+            heap[i] = input[i];
+        }
+        for (int i = 3; i <input.length ; i++) {
+            new TopKArray().heap_insert(heap, input[i]);
+        }
         System.out.println("input=" + JsonUtil.toJson(input));
-//        System.out.println("result=" + JsonUtil.toJson(result));
+        System.out.println("heap=" + JsonUtil.toJson(heap));
     }
 
 }
