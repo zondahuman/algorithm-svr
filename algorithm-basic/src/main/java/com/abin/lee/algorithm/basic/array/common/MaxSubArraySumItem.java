@@ -27,7 +27,8 @@ public class MaxSubArraySumItem {
      * @param args
      */
     public static void main(String[] args) {
-        int[] arrays = new int[]{-2, 2, -3, 4, -1, 2, 1, -5, 3};
+//        int[] arrays = new int[]{-2, 2, -3, 4, -1, 2, 1, -5, 3};
+        int[] arrays = new int[]{-23, 17, -7, 11, -2, 1, -34};
         int dpResult = dynamicProgramSubArraySum(arrays);
         System.out.println("dpResult=" + dpResult);
         int greedyResult = greedySubArraySum(arrays);
@@ -48,19 +49,19 @@ public class MaxSubArraySumItem {
         int end = 0;
         for (int i = 0; i < params.length; i++) {
             currentSum += params[i];
-            if(currentSum > 0) {
+            if (currentSum > 0) {
                 if (currentSum > maxSum) {
                     maxSum = currentSum;
-                    start = curStart ;
+                    start = curStart;
                     end = i;
                 }
-            }else{
+            } else {
                 currentSum = 0;
-                curStart = i ;
+                curStart = i;
             }
         }
         List<Integer> list = new ArrayList<Integer>();
-        for (int i = start+1; i <=end ; i++) {
+        for (int i = start + 1; i <= end; i++) {
             list.add(params[i]);
         }
         return list;
@@ -81,7 +82,7 @@ public class MaxSubArraySumItem {
                 }
             } else {
                 currentSum = 0;
-                while(!queue.isEmpty() && queue.size()>1)
+                while (!queue.isEmpty() && queue.size() > 1)
                     queue.pop();
             }
         }

@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.special.recursive.test;
+package com.abin.lee.algorithm.test.special.recursive;
 
 import java.util.ArrayList;
 import java.util.List;

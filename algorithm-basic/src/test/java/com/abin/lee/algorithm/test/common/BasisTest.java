@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.basis.test;
+package com.abin.lee.algorithm.test.common;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Maps;

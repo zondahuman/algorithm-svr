@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.basic.array.common.test;
+package com.abin.lee.algorithm.test.array.common;
 
 import java.util.Arrays;
 

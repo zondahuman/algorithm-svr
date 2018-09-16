@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.basic.test;
+package com.abin.lee.algorithm.test.common;
 
 import javax.xml.bind.SchemaOutputResolver;
 

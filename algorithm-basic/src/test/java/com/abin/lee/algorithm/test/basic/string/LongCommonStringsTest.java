@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.basic.strings.test;
+package com.abin.lee.algorithm.test.basic.string;
 
 import org.apache.commons.lang3.StringUtils;
 

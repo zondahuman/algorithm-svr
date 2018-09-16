@@ -1,4 +1,4 @@
-package com.abin.lee.algorithm.basic.strings.test;
+package com.abin.lee.algorithm.test.basic.string;
 
 /**
  * Created by abin on 2017/12/6 11:42.
