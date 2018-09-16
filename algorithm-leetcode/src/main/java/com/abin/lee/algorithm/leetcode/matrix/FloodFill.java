@@ -2,11 +2,15 @@ package com.abin.lee.algorithm.leetcode.matrix;
 
 import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by abin on 2018/9/15.
  * 733. Flood Fill
  * 填充图像
  * https://leetcode.com/problems/flood-fill/description/
+ * https://leetcode.com/problems/flood-fill/discuss/109608/Java-BFS
  */
 public class FloodFill {
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
@@ -39,6 +43,52 @@ public class FloodFill {
         floodFill2Dfs(image, sr, sc + 1, color, newColor);
         floodFill2Dfs(image, sr, sc - 1, color, newColor);
     }
+
+    int[][] positions = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+
+    public int[][] floodFill3(int[][] image, int sr, int sc, int newColor) {
+        int color = image[sr][sc];
+        boolean[][] flag = new boolean[image.length][image[0].length];
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{sr, sc});
+        while (!queue.isEmpty()) {
+            int[] cell = queue.poll();
+            int row = cell[0];
+            int column = cell[1];
+            flag[row][column] = true;
+            for (int[] poi : positions) {
+                int nrow = row + poi[0];
+                int ncolumn = column + poi[1];
+                if (nrow < 0 || nrow >= image.length || ncolumn < 0 || ncolumn >= image[0].length || image[nrow][ncolumn] != color || flag[nrow][ncolumn])
+                    continue;
+                queue.offer(new int[]{nrow, ncolumn});
+            }
+            image[row][column] = newColor;
+        }
+        return image;
+    }
+
+    public int[][] floodFill4(int[][] image, int sr, int sc, int newColor) {
+        int color = image[sr][sc];
+        boolean[][] flag = new boolean[image.length][image[0].length];
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{sr, sc});
+        while (!queue.isEmpty()) {
+            int[] cell = queue.poll();
+            int row = cell[0];
+            int column = cell[1];
+            flag[row][column] = true;
+            for (int[] poi : positions) {
+                int nrow = row + poi[0];
+                int ncolumn = column + poi[1];
+                if (nrow >= 0 && nrow < image.length && ncolumn >= 0 && ncolumn < image[0].length && !flag[nrow][ncolumn] && image[nrow][ncolumn] == color)
+                    queue.offer(new int[]{nrow, ncolumn});
+            }
+            image[row][column] = newColor;
+        }
+        return image;
+    }
+
     /**
      * Input:
      * image = [[1,1,1],[1,1,0],[1,0,1]]
@@ -67,7 +117,9 @@ public class FloodFill {
                 {2, 2, 0},
                 {2, 0, 1}
         };
-        int[][] result = new FloodFill().floodFill(matrix, 1, 1, 2);
+//        int[][] result = new FloodFill().floodFill(matrix, 1, 1, 2);
+//        int[][] result = new FloodFill().floodFill3(matrix, 1, 1, 2);
+        int[][] result = new FloodFill().floodFill4(matrix, 1, 1, 2);
         System.out.println("result=" + JsonUtil.toJson(result));
     }
 
