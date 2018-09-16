@@ -1,5 +1,7 @@
 package com.abin.lee.algorithm.special.basic.topk;
 
+import com.abin.lee.algorithm.common.json.jackson.JsonUtil;
+
 /**
  * Created by abin on 2018/9/15.
  * top k算法讲解
@@ -7,7 +9,7 @@ package com.abin.lee.algorithm.special.basic.topk;
  */
 public class TopKArray {
 
-    private final int MAXSIZE = 10 + 1;
+    private final int MAXSIZE = 2 + 1;
     private int currentSize = 1;
 
     private void heap_insert(int[] array, int value) {
@@ -40,8 +42,14 @@ public class TopKArray {
             s = i;
         }
         array[s] = temp;
-
     }
 
+
+    public static void main(String[] args) {
+        int[] input = new int[]{5, 1, 3, 6, 2, 4};
+        new TopKArray().heap_insert(input, 3);
+        System.out.println("input=" + JsonUtil.toJson(input));
+//        System.out.println("result=" + JsonUtil.toJson(result));
+    }
 
 }
