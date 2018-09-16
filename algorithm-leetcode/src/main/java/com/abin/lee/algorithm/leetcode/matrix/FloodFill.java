@@ -89,6 +89,45 @@ public class FloodFill {
         return image;
     }
 
+    public int[][] floodFill5(int[][] image, int sr, int sc, int newColor) {
+        int color = image[sr][sc];
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{sr, sc});
+        while (!queue.isEmpty()) {
+            int[] cell = queue.poll();
+            int row = cell[0];
+            int column = cell[1];
+            for (int[] poi : positions) {
+                int nrow = row + poi[0];
+                int ncolumn = column + poi[1];
+                if (nrow >= 0 && nrow < image.length && ncolumn >= 0 && ncolumn < image[0].length &&  image[nrow][ncolumn] == color)
+                    queue.offer(new int[]{nrow, ncolumn});
+            }
+            image[row][column] = newColor;
+        }
+        return image;
+    }
+
+    public int[][] floodFill6(int[][] image, int sr, int sc, int newColor) {
+        int color = image[sr][sc];
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{sr, sc});
+        while (!queue.isEmpty()) {
+            int[] cell = queue.poll();
+            int row = cell[0];
+            int column = cell[1];
+            for (int[] poi : positions) {
+                int nrow = row + poi[0];
+                int ncolumn = column + poi[1];
+                if (nrow < 0 || nrow >= image.length || ncolumn < 0 || ncolumn >= image[0].length || image[nrow][ncolumn] != color)
+                    continue;
+                queue.offer(new int[]{nrow, ncolumn});
+            }
+            image[row][column] = newColor;
+        }
+        return image;
+    }
+
     /**
      * Input:
      * image = [[1,1,1],[1,1,0],[1,0,1]]
@@ -119,7 +158,9 @@ public class FloodFill {
         };
 //        int[][] result = new FloodFill().floodFill(matrix, 1, 1, 2);
 //        int[][] result = new FloodFill().floodFill3(matrix, 1, 1, 2);
-        int[][] result = new FloodFill().floodFill4(matrix, 1, 1, 2);
+//        int[][] result = new FloodFill().floodFill4(matrix, 1, 1, 2);
+//        int[][] result = new FloodFill().floodFill5(matrix, 1, 1, 2);
+        int[][] result = new FloodFill().floodFill6(matrix, 1, 1, 2);
         System.out.println("result=" + JsonUtil.toJson(result));
     }
 
